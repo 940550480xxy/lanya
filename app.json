@@ -1,0 +1,63 @@
+{
+  "usingComponents": {},
+  "pages": [
+    "pages/index/index",
+    "pages/user-guanzhu/user-guanzhu",
+    "pages/user-jinyan/user-jinyan",
+    "pages/tiezi-detail/tiezi-detail",
+    "pages/lanyatext/lanya",
+    "pages/user-xiaoxi/user-xiaoxi",
+    "pages/delete-jilu/delete-jilu",
+    "pages/user/user",
+    "pages/game-pinglun/game-pinglun",
+    "pages/shangchuan/shangchuan",
+    "pages/game-shuru/game-shuru",
+    "pages/luntan/luntan",
+    "pages/game-chose/game-chose",
+    "pages/guanwang/guanwang",
+    "pages/gamedan/gamedan",
+    "pages/sc-chose/sc-chose",
+    "pages/sc-chose1/sc-chose1",
+    "pages/yh-quanxian/yh-quanxian",
+    "pages/quanxian/quanxian",
+    "pages/search/search",
+    "pages/user-zhiding/user-zhiding",
+    "pages/user-jiajing/user-jiajing"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3D3D3D",
+    "navigationBarTitleText": "设备",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "iconPath": "image/shebei2.png",
+        "selectedIconPath": "image/shebei1.png",
+        "pagePath": "pages/index/index",
+        "text": "设备"
+      },
+      {
+        "pagePath": "pages/luntan/luntan",
+        "selectedIconPath": "image/luntan1.png",
+        "iconPath": "image/luntan2.png",
+        "text": "论坛"
+      },
+      {
+        "iconPath": "image/guanwang2.png",
+        "selectedIconPath": "image/guanwang1.png",
+        "pagePath": "pages/guanwang/guanwang",
+        "text": "官网"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "selectedIconPath": "image/yonghu1.png",
+        "iconPath": "image/yonghu2.png",
+        "text": "用户"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

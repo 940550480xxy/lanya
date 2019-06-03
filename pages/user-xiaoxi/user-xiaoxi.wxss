@@ -1,0 +1,120 @@
+/* pages/user-news/user-news.wxss */
+page{
+  background: #fff;
+}
+.xiaoxi-ul{
+  padding: 0 26rpx;
+}
+.xiaoxi-li{
+  padding: 42rpx 0rpx;
+  border-bottom: 1px solid #EDEDED;
+}
+.xiaoxi-li-tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xiaoxi-li-tit-left{
+  display: flex;
+  justify-content: flex-start;
+}
+.xiaoxi-li-tuxiang image{
+  width:40rpx;
+height:40rpx;
+border-radius:20rpx;
+}
+.xiaoxi-user{
+  font-size: 32rpx;
+  margin-left: 12rpx;
+  color: #3393FF;
+  font-weight: bold;
+  letter-spacing: 1.5;
+}
+.xiaoxi-zan{
+  font-size: 32rpx;
+  color: #424242;
+  font-weight: bold;
+  margin-left: 6.5rpx;
+  letter-spacing: 1.5;
+  display: inline-block;
+}
+.xiaoxi-tit-date{
+  font-size: 20rpx;
+  color: #8E8E8E;
+}
+
+
+.xiaoxi-tiezi-li{
+   display: flex;
+  justify-content: flex-start;
+  margin-top: 30rpx;
+}
+.xiaoxi-tiezi-left{
+  justify-content: flex-start;
+  display: flex;
+}
+.xiaoxi-tiezi-left image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.xiaoxi-tiezi-right{
+  margin-left: 22rpx;
+}
+.xiaoxi-li-tit{
+  display: flex;
+  justify-content: space-between;
+}
+.xiaoxi-li-tit-txt{
+  font-size: 30rpx;
+  color: #424242;
+  font-weight: bold;
+  max-width: 481rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.xiaoxi-li-tit-rig{
+  width: auto;
+  padding:0 14rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  background:rgba(51,147,255,1);
+border-radius:10rpx;
+color: #fff;
+font-size: 20rpx;
+margin-left: 20rpx;
+}
+
+.xiaoxi-from {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.xiaoxi-form-con {
+  font-size: 24rpx;
+  color: #424242;
+}
+
+.xiaoxi-from image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.xiaoxi-yours {
+  font-size: 24rpx;
+  color: #3393ff;
+  margin-left: 14rpx;
+}
+
+.xiaoxi-yours text {
+  border-bottom: 1px solid #3393ff;
+}
+
+.xiaoxi-data {
+  font-size: 20rpx;
+  color: #424242;
+  margin-left: 14rpx;
+}

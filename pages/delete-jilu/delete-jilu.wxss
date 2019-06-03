@@ -1,0 +1,77 @@
+/* pages/delete-jilu/delete-jilu.wxss */
+page{
+  background: #fff;
+}
+.de-ul{
+  padding: 0 26rpx;
+}
+.de-li{
+
+  padding: 32rpx 0;
+  border-bottom: 1px solid #EDEDED;
+}
+.de-li-top{
+    display: flex;
+  justify-content: space-between;
+}
+.de-li-tit{
+  font-size: 32rpx;
+  color: #424242;
+  font-weight: bold;
+}
+.de-li-btn{
+  width: auto;
+  line-height: 42rpx;
+  height: 42rpx;
+  padding: 0 24rpx;
+  font-size: 20rpx;
+  color: #3393FF;
+  font-weight: bold;
+  background:rgba(255,255,255,1);
+  margin: 0;
+}
+.de-li-cen{
+  font-size: 28rpx;
+  color: #424242;
+  margin-top: 17rpx;
+}
+.de-li-bot{
+  width: 55%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.de-form-con{
+  font-size: 24rpx;
+  color: #424242;
+}
+.de-li-bot image{
+  width:40rpx;
+height:40rpx;
+border-radius:50%; 
+}
+.de-xiangmu{
+  display: flex;
+  justify-content: space-between;
+}
+.xiangmu-ai{
+  font-size:26rpx;
+  color:#424242;
+  width: 100%;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  
+}
+.de-yours{
+  font-size: 24rpx;
+  color: #3393FF;
+}
+.de-yours text{
+
+  border-bottom: 1px solid #3393FF;
+}
+.de-data{
+  font-size: 20rpx;
+  color: #424242;
+}

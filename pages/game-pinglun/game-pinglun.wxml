@@ -1,0 +1,57 @@
+<view class="pl-top">
+  <view class='pl-top-cen'>
+    <view class='pl-top-xx'>
+      <view class='pl-top-img'>
+        <image src='../../image/luntan2.jpg'></image>
+      </view>
+      <view class='pl-top-right'>
+        <text class='pl-top-tit'>狐狸的尾巴</text>
+        <view class='pl-top-txt'>
+          <text class='pl-pingfen'>综合评分</text>
+          <text class='pl-score'>4.9</text>
+          <view class='lp-top-start'>
+            <icon class='iconfont icon-wuxing sr-start'></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='pl-cen'>
+      <view class='pl-cen-top'>
+        <view class='pl-cen-left'>
+          <text class='pl-cen-txt'>兔兔大长腿</text>
+          <view class='lp-top-start'>
+            <icon class='iconfont icon-wuxing sr-start1'></icon>
+          </view>
+        </view>
+        <view class='pl-top-date'>2019-05-20</view>
+      </view>
+      <view class='pl-cen-bot'>
+        <text class='pl-cen-pinglun'>挺好的应用，方便，流畅，炫酷!!!</text>
+      </view>
+    </view>
+    <view class='pl-cen'>
+      <view class='pl-cen-top'>
+        <view class='pl-cen-left'>
+          <text class='pl-cen-txt'>兔兔大长腿</text>
+          <view class='lp-top-start'>
+            <icon class='iconfont icon-wuxing sr-start1'></icon>
+          </view>
+        </view>
+        <view class='pl-top-date'>2019-05-20</view>
+      </view>
+      <view class='pl-cen-bot'>
+        <text class='pl-cen-pinglun'>挺好的应用，方便，流畅，炫酷!!!</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class='yx-bot'>
+  <view class='hr'></view>
+  <view class='yx-bot-cen'>
+  <navigator url='../game-shuru/game-shuru'>
+    <button class='yx-log'>评论</button>
+  </navigator>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/delete-jilu/delete-jilu.wxml-->
+<!-- <text>pages/delete-jilu/delete-jilu.wxml</text> -->
+<view class='de-ul'>
+  <view class='de-li'>
+    <view class='de-li-top'>
+      <text class='de-li-tit'>双马尾成为了最佳减龄神器？</text>
+      <button class='de-li-btn'>取消</button>
+    </view>
+    <view class='de-li-cen'>
+      除了小朋友，为什么日常生活中很少有人扎马尾？很村？装嫩？有病？轻快抛开你对他的偏见吧!!!
+    </view>
+    <view class='de-li-bot'>
+      <text class='de-form-con'>来自</text>
+      <navigator url='../quanxian/quanxian'>
+        <image src='../../image/luntan5.jpg'></image>
+      </navigator>
+      <navigator class='de-yours'>
+        <text>你的我的</text>
+      </navigator>
+      <text class='de-data'>2019-12-21 12:00</text>
+    </view>
+  </view>
+  <view class='de-li'>
+    <view class='de-li-top'>
+      <text class='de-li-tit'>双马尾成为了最佳减龄神器？</text>
+      <button class='de-li-btn'>取消</button>
+    </view>
+    <view class='de-li-cen'>
+      除了小朋友，为什么日常生活中很少有人扎马尾？很村？装嫩？有病？轻快抛开你对他的偏见吧!!!
+    </view>
+    <view class='de-li-bot'>
+      <text class='de-form-con'>来自</text>
+      <navigator url='../quanxian/quanxian'>
+        <image src='../../image/luntan5.jpg'></image>
+      </navigator>
+      <navigator class='de-yours'>
+        <text>你的我的</text>
+      </navigator>
+      <text class='de-data'>2019-12-21 12:00</text>
+    </view>
+  </view>
+
+</view>

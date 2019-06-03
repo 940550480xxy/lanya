@@ -1,0 +1,21 @@
+<view class="sr-top">
+  <view class='sr-top-cen'>
+    <view class='sr-top-tit'>
+      <view class='sr-top-tit-start'>
+        <icon class='iconfont icon-wuxing sr-start'></icon>
+      </view>
+      <view class='sr-pingfen'>点击星星评分</view>
+    </view>
+    <view class='sr-textarea'>
+      <textarea placeholder='请输入...' class='sr-textarea-con' maxlength="1" maxlength="300"></textarea>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class='yx-bot'>
+  <view class='hr'></view>
+  <view class='yx-bot-cen'>
+    <button class='yx-log'>提交</button>
+  </view>
+</view>

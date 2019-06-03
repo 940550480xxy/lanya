@@ -1,0 +1,51 @@
+<view class="yx-cen">
+  <view class='yx-cen-con'>
+    <!-- <view class='yx-ul'> -->
+    <view class='yx-li'>
+      <view class='yx-li-img'>
+        <image src='../../image/luntan1.jpg'></image>
+      </view>
+      <view class='yx-li-txt'>狐狸的尾巴</view>
+    </view>
+    <view class='yx-li'>
+      <navigator url='../game-pinglun/game-pinglun'>
+        <view class='yx-li-img'>
+          <image src='../../image/luntan2.jpg'></image>
+        </view>
+        <view class='yx-li-txt'>和平精英</view>
+      </navigator>
+    </view>
+    <view class='yx-li'>
+      <view class='yx-li-img'>
+        <image src='../../image/luntan3.jpg'></image>
+      </view>
+      <view class='yx-li-txt'>QQ飞车</view>
+    </view>
+    <view class='yx-li'>
+      <view class='yx-li-img'>
+        <image src='../../image/luntan4.jpg'></image>
+      </view>
+      <view class='yx-li-txt'>冰果消消</view>
+    </view>
+    <view class='yx-li'>
+      <view class='yx-li-img'>
+        <image src='../../image/luntan1.jpg'></image>
+      </view>
+      <view class='yx-li-txt'>狐狸的尾巴</view>
+    </view>
+    <view class='yx-li'>
+      <view class='yx-li-img'>
+        <image src='../../image/luntan2.jpg'></image>
+      </view>
+      <view class='yx-li-txt'>和平精英</view>
+    </view>
+  </view>
+  <!-- </view> -->
+</view>
+<!-- 底部 -->
+<view class='yx-bot'>
+  <view class='hr'></view>
+  <view class='yx-bot-cen'>
+    <button class='yx-log'>下载</button>
+  </view>
+</view>

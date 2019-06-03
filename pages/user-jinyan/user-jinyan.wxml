@@ -1,0 +1,51 @@
+ <!-- 关注的人 -->
+    <view class='gz-con gz-person'>
+      <view class='gz-con-ul' id='gz-con-ul-id'>
+        <view class='gz-con-li'>
+          <view class='gz-top-cen'>
+            <view class='gz-top-cen-chengjiu'>
+              <view class='gz-top-img'>
+                <image src="../../image/luntan5.jpg"></image>
+              </view>
+              <view class='gz-top-cen-cen'>
+                <view class='gz-top-cen-top'>
+                  <text class='gz-tit'>西瓜头</text>
+                </view>
+                <view class='gz-top-cen-bot'>
+                  小可爱们，快来关注呦！
+                </view>
+              </view>
+            </view>
+            <view class='gz-top-right'>
+              <button class='gz-guanzhu'>取消</button>
+              <!-- <button class='gz-guanzhued'>已关注</button> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='gz-con-ul' id='gz-con-ul-id'>
+        <view class='gz-con-li'>
+          <view class='gz-top-cen'>
+            <view class='gz-top-cen-chengjiu'>
+              <view class='gz-top-img'>
+                <image src="../../image/luntan5.jpg"></image>
+              </view>
+              <view class='gz-top-cen-cen'>
+                <view class='gz-top-cen-top'>
+                  <text class='gz-tit'>南nan瓜头</text>
+                </view>
+                <view class='gz-top-cen-bot'>
+                  小可爱们，快来关注呦！
+                </view>
+              </view>
+            </view>
+            <view class='gz-top-right'>
+              <button class='gz-guanzhu'>取消</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+   
+<!-- </view> -->
+ 

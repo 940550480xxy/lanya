@@ -1,0 +1,56 @@
+<view class="gw-cen">
+  <view class='gw-cen-con'>
+    <view class='gw-li gw-li1'>
+      <view class='gw-li-left'>
+        <image src='../../image/luntan2.jpg'></image>
+      </view>
+      <view class='gw-li-right'>
+        <text class='gw-li-tit'>热门网游</text>
+        <navigator url='../gamedan/gamedan'>
+          <button class='gw-li-right-btn'>点击进入</button>
+        </navigator>
+      </view>
+    </view>
+
+
+    <view class='gw-li gw-li1'>
+      <view class='gw-li-left'>
+        <image src='../../image/luntan3.jpg'></image>
+      </view>
+      <view class='gw-li-right'>
+        <text class='gw-li-tit'>棋牌室</text>
+        <navigator url='../gamedan/gamedan'>
+          <button class='gw-li-right-btn'>点击进入</button>
+        </navigator>
+      </view>
+    </view>
+  
+
+  
+    <view class='gw-li gw-li1'>
+      <view class='gw-li-left'>
+        <image src='../../image/luntan4.jpg'></image>
+      </view>
+      <view class='gw-li-right'>
+        <text class='gw-li-tit'>休闲一刻</text>
+        <navigator url='../gamedan/gamedan'>
+          <button class='gw-li-right-btn'>点击进入</button>
+        </navigator>
+      </view>
+    </view>
+
+
+    <view class='gw-li gw-li1'>
+      <view class='gw-li-left'>
+        <image src='../../image/luntan4.jpg'></image>
+      </view>
+      <view class='gw-li-right'>
+        <text class='gw-li-tit'>捕鱼专场</text>
+        <navigator url='../gamedan/gamedan'>
+          <button class='gw-li-right-btn'>点击进入</button>
+        </navigator>
+      </view>
+    </view>
+
+  </view>
+</view>

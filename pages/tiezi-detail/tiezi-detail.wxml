@@ -1,0 +1,107 @@
+<view class='luntanCon'>
+  <view class='luntanCon-con'>
+    <view class='luntanCon-tit'>
+      <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
+      <text class='luntanConTit-right'>时尚</text>
+    </view>
+    <view class='luntanCon-txt'>
+      <text class='luntan-txt'>除了小朋友，为什么日常生活中很少有人扎双马尾？</text>
+    </view>
+    <!-- @ -->
+    <view class='cun'>
+      <view class='nei'>
+        <text class='nide'>@你的还是我的：</text>
+        <text class='pianjian'>很村？装嫩？有病？请快抛开你对他的偏见吧！</text>
+      </view>
+    </view>
+    <!-- 图片 -->
+    <view class='luntan-img'>
+      <view class='luntan-imgCon'>
+        <image src='../../image/luntan1.jpg'></image>
+      </view>
+      <view class='luntan-imgCon'>
+        <image src='../../image/luntan2.jpg'></image>
+      </view>
+      <view class='luntan-imgCon'>
+        <image src='../../image/luntan3.jpg'></image>
+      </view>
+      <view class='luntan-imgCon'>
+        <image src='../../image/luntan4.jpg'></image>
+      </view>
+    </view>
+    <view class='luntan-from'>
+      <text class='form-con'>来自</text>
+      <navigator url='pages/yh-quanxian/yh-quanxian'>
+        <image src='../../image/luntan5.jpg'></image>
+      </navigator>
+      <navigator class='yours'>
+        <text>你的我的</text>
+      </navigator>
+      <text class='data'>2019-12-21 12:00</text>
+    </view>
+    <view class='luntanCon-bot'>
+      <view class='luntanConBot-left'>
+        <icon class='iconfont icon-chakan'></icon>
+        <text>200次</text>
+      </view>
+      <view class='luntanConBot-con'>
+        <icon class='iconfont icon-pinglun'></icon>
+        <text>20条</text>
+      </view>
+      <view class='luntanConBot-right'>
+        <icon class='iconfont icon-shoucang'></icon>
+        <text>20</text>
+      </view>
+    </view>
+    <!-- 聊天 -->
+    <view class='liuyan'>
+      <view class='liuyan-con'>
+        <!-- liuyanyi -->
+        <view class='liuyan1'>
+          <view class='liuyan-img'>
+            <image src="../../image/luntan5.jpg"></image>
+          </view>
+          <view class='liuyan-txt'>
+            <view class='liuyan-con-con'>
+              <text class='liuyan-name'>韩君:</text>
+              <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
+            </view>
+            <view class='liuyan-data'>2019-12-21</view>
+          </view>
+        </view>
+        <!-- liuyan2 -->
+        <view class='liuyan1'>
+          <view class='liuyan-img'>
+            <image src="../../image/luntan5.jpg"></image>
+          </view>
+          <view class='liuyan-txt'>
+            <view class='liuyan-con-con'>
+              <text class='liuyan-name'>韩君:</text>
+              <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
+            </view>
+            <view class='liuyan-data'>2019-12-21</view>
+          </view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view class="tiezi-bot">
+  <view class="tiezi-bot-con">
+    <view class="tit-bot-top">
+      <view class="tiezi-bot-top-icon">
+        <icon class="iconfont icon-icon-test"></icon>
+        <icon class="iconfont icon-biaoqing"></icon>
+        <icon class="iconfont icon-gengduo"></icon>
+      </view>
+    </view>
+    <!-- <view class='tit-bot-bot'> -->
+      <view class='tit-bot-bot'>
+        <input placeholder='请输入发表内容...' class='tit-bot-input'></input>
+        <button class='tit-bot-btn'>发送</button>
+      </view>
+    </view>
+  <!-- </view> -->
+</view>
