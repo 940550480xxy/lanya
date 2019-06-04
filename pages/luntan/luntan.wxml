@@ -17,46 +17,158 @@
     </view>
     <view class='in-sec-right'>
       <view class='luntan-sec'>
-      <navigator url='../sc-chose/sc-chose'>
-        <icon class='iconfont icon-Release'></icon>
-      </navigator>
+        <navigator url='../sc-chose/sc-chose'>
+          <icon class='iconfont icon-Release'></icon>
+        </navigator>
       </view>
     </view>
   </view>
 </view>
 <!-- 内容部分 -->
-  <navigator url='../tiezi-detail/tiezi-detail'>
-<view class='luntanCon'>
-  <view class='luntanCon-con'>
-    <view class='luntanCon-tit'>
-      <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
-      <text class='luntanConTit-right'>时尚</text>
-    </view>
-    <view class='luntanCon-txt'>
-      <text class='luntan-txt'>
+<navigator url='../tiezi-detail/tiezi-detail'>
+  <view class='luntanCon'>
+    <view class='luntanCon-con'>
+      <view class='luntanCon-tit'>
+        <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
+        <text class='luntanConTit-right'>时尚</text>
+      </view>
+      <view class='luntanCon-txt'>
+        <text class='luntan-txt'>
        除了小朋友，为什么日常生活中很少有人扎双马尾？很村？装嫩？有病？请抛开你对他的偏见吧！
        低双马尾
        高双马尾
        编发双马尾
        ...
      </text>
-      <view class='luntan-img'>
-        <view class='luntan-imgCon'>
-          <image src='../../image/luntan1.jpg'></image>
+        <view class='luntan-img'>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan1.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan2.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan3.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan4.jpg'></image>
+          </view>
         </view>
-        <view class='luntan-imgCon'>
-          <image src='../../image/luntan2.jpg'></image>
+        <view class='luntan-from'>
+          <text class='form-con'>来自</text>
+          <navigator url='../quanxian/quanxian'>
+            <image src='../../image/luntan5.jpg'></image>
+          </navigator>
+          <navigator class='yours' url='../quanxian/quanxian'>
+            <text>你的我的</text>
+          </navigator>
+          <text class='data'>2019-12-21 12:00</text>
         </view>
-        <view class='luntan-imgCon'>
-          <image src='../../image/luntan3.jpg'></image>
-        </view>
-        <view class='luntan-imgCon'>
-          <image src='../../image/luntan4.jpg'></image>
+        <view class='luntanCon-bot'>
+          <view class='luntanConBot-left'>
+            <icon class='iconfont icon-chakan'></icon>
+            <text>200次</text>
+          </view>
+          <view class='luntanConBot-con'>
+            <icon class='iconfont icon-pinglun'></icon>
+            <text>20条</text>
+          </view>
+          <view class='luntanConBot-right'>
+            <icon class='iconfont icon-shoucang'></icon>
+            <text>20</text>
+          </view>
         </view>
       </view>
+    </view>
+  </view>
+</navigator>
+<!-- 内容部分 -->
+
+<navigator url='../tiezi-detail/tiezi-detail'>
+  <view class='luntanCon'>
+    <view class='luntanCon-con'>
+      <view class='luntanCon-tit'>
+        <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
+        <text class='luntanConTit-right'>时尚</text>
+      </view>
+      <view class='luntanCon-txt'>
+        <text class='luntan-txt'>
+       除了小朋友，为什么日常生活中很少有人扎双马尾？很村？装嫩？有病？请抛开你对他的偏见吧！
+     </text>
+
+      </view>
+
+
+      <!-- 第一个项目 -->
+      <view class='xiangmu'>
+        <view class='xiangmu-con'>
+          <view class='xiangmu-icon'>
+            <icon class='iconfont icon-jiaoben xiangmu-icon1'></icon>
+          </view>
+          <view class='xiangmu-ai'>
+            《爱YOU》app项目
+          </view>
+          <view class='xiazai'>
+            <text class='xiazai-con'>下载次数</text>
+            <text class='cishu'>102</text>
+            <text class='ci'>次</text>
+          </view>
+        </view>
+
+        <!-- 第二个项目 -->
+        <view class='xiangmu-con'>
+          <view class='xiangmu-icon'>
+            <icon class='iconfont icon-jiaoben xiangmu-icon1'></icon>
+          </view>
+          <view class='xiangmu-ai'>
+            《爱YOU》app项目
+          </view>
+          <view class='xiazai'>
+            <text class='xiazai-con'>下载次数</text>
+            <text class='cishu'>102</text>
+            <text class='ci'>次</text>
+          </view>
+        </view>
+
+        <!-- 第三个项目 -->
+        <view class='xiangmu-con'>
+          <view class='xiangmu-icon'>
+            <icon class='iconfont icon-jiaoben xiangmu-icon1'></icon>
+          </view>
+          <view class='xiangmu-ai'>
+            《爱YOU》app项目
+          </view>
+          <view class='xiazai'>
+            <text class='xiazai-con'>下载次数</text>
+            <text class='cishu'>102</text>
+            <text class='ci'>次</text>
+          </view>
+        </view>
+
+        <!-- 第四个项目 -->
+        <view class='xiangmu-con'>
+          <view class='xiangmu-icon'>
+            <icon class='iconfont icon-jiaoben xiangmu-icon1'></icon>
+          </view>
+          <view class='xiangmu-ai'>
+            《爱YOU》app项目
+          </view>
+          <view class='xiazai'>
+            <text class='xiazai-con'>下载次数</text>
+            <text class='cishu'>102</text>
+            <text class='ci'>次</text>
+          </view>
+        </view>
+
+
+      </view>
+      <!--  -->
+
       <view class='luntan-from'>
         <text class='form-con'>来自</text>
-       <navigator url='../quanxian/quanxian'> <image src='../../image/luntan5.jpg'></image></navigator>
+        <navigator url='../yh-quanxian/yh-quanxian'>
+          <image src='../../image/luntan5.jpg'></image>
+        </navigator>
         <navigator class='yours' url='../quanxian/quanxian'>
           <text>你的我的</text>
         </navigator>
@@ -78,140 +190,30 @@
       </view>
     </view>
   </view>
-</view>
 </navigator>
 <!-- 内容部分 -->
-
-  <navigator url='../tiezi-detail/tiezi-detail'>
-<view class='luntanCon'>
-  <view class='luntanCon-con'>
-    <view class='luntanCon-tit'>
-      <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
-      <text class='luntanConTit-right'>时尚</text>
-    </view>
-    <view class='luntanCon-txt'>
-      <text class='luntan-txt'>
-       除了小朋友，为什么日常生活中很少有人扎双马尾？很村？装嫩？有病？请抛开你对他的偏见吧！
-     </text>
-
-    </view>
-
-
-    <!-- 第一个项目 -->
-    <view class='xiangmu'>
-      <view class='xiangmu-con'>
-        <view class='xiangmu-icon'>
-          <icon class='iconfont icon-word xiangmu-icon1'></icon>
-        </view>
-        <view class='xiangmu-ai'>
-          《爱YOU》app项目
-        </view>
-        <view class='xiazai'>
-          <text class='xiazai-con'>下载次数</text>
-          <text class='cishu'>102</text>
-          <text class='ci'>次</text>
-        </view>
+<navigator url='../tiezi-detail/tiezi-detail'>
+  <view class='luntanCon'>
+    <view class='luntanCon-con'>
+      <view class='luntanCon-tit'>
+        <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
+        <text class='luntanConTit-right'>时尚</text>
       </view>
-
-      <!-- 第二个项目 -->
-      <view class='xiangmu-con'>
-        <view class='xiangmu-icon'>
-          <icon class='iconfont icon-word xiangmu-icon1'></icon>
-        </view>
-        <view class='xiangmu-ai'>
-          《爱YOU》app项目
-        </view>
-        <view class='xiazai'>
-          <text class='xiazai-con'>下载次数</text>
-          <text class='cishu'>102</text>
-          <text class='ci'>次</text>
-        </view>
-      </view>
-
-      <!-- 第三个项目 -->
-      <view class='xiangmu-con'>
-        <view class='xiangmu-icon'>
-          <icon class='iconfont icon-word xiangmu-icon1'></icon>
-        </view>
-        <view class='xiangmu-ai'>
-          《爱YOU》app项目
-        </view>
-        <view class='xiazai'>
-          <text class='xiazai-con'>下载次数</text>
-          <text class='cishu'>102</text>
-          <text class='ci'>次</text>
-        </view>
-      </view>
-
-      <!-- 第四个项目 -->
-      <view class='xiangmu-con'>
-        <view class='xiangmu-icon'>
-          <icon class='iconfont icon-word xiangmu-icon1'></icon>
-        </view>
-        <view class='xiangmu-ai'>
-          《爱YOU》app项目
-        </view>
-        <view class='xiazai'>
-          <text class='xiazai-con'>下载次数</text>
-          <text class='cishu'>102</text>
-          <text class='ci'>次</text>
-        </view>
-      </view>
-
-
-    </view>
-    <!--  -->
-
-    <view class='luntan-from'>
-      <text class='form-con'>来自</text>
-      <navigator url='../yh-quanxian/yh-quanxian'>
-        <image src='../../image/luntan5.jpg'></image>
-      </navigator>
-      <navigator class='yours' url='../quanxian/quanxian'>
-        <text>你的我的</text>
-      </navigator>
-      <text class='data'>2019-12-21 12:00</text>
-    </view>
-    <view class='luntanCon-bot'>
-      <view class='luntanConBot-left'>
-        <icon class='iconfont icon-chakan'></icon>
-        <text>200次</text>
-      </view>
-      <view class='luntanConBot-con'>
-        <icon class='iconfont icon-pinglun'></icon>
-        <text>20条</text>
-      </view>
-      <view class='luntanConBot-right'>
-        <icon class='iconfont icon-shoucang'></icon>
-        <text>20</text>
-      </view>
-    </view>
-  </view>
-</view>
- </navigator>
-<!-- 内容部分 -->
- <navigator url='../tiezi-detail/tiezi-detail'>
-<view class='luntanCon'>
-  <view class='luntanCon-con'>
-    <view class='luntanCon-tit'>
-      <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
-      <text class='luntanConTit-right'>时尚</text>
-    </view>
-    <view class='luntanCon-txt'>
-      <text class='luntan-txt'>
+      <view class='luntanCon-txt'>
+        <text class='luntan-txt'>
        除了小朋友，为什么日常生活中很少有人扎双马尾？
      </text>
-    </view>
+      </view>
 
-<!-- @ -->
-<view class='cun'>
-  <view class='nei'>
-    <text class='nide'>@你的还是我的：</text>
-    <text class='pianjian'>很村？装嫩？有病？请快抛开你对他的偏见吧！</text>
-  </view>
-</view>
-    <!--  图片-->
-<view class='luntan-img'>
+      <!-- @ -->
+      <view class='cun'>
+        <view class='nei'>
+          <text class='nide'>@你的还是我的：</text>
+          <text class='pianjian'>很村？装嫩？有病？请快抛开你对他的偏见吧！</text>
+        </view>
+      </view>
+      <!--  图片-->
+      <view class='luntan-img'>
         <view class='luntan-imgCon'>
           <image src='../../image/luntan1.jpg'></image>
         </view>
@@ -227,66 +229,129 @@
       </view>
 
 
-    <view class='luntan-from'>
-      <text class='form-con'>来自</text>
-      <navigator url='pages/yh-quanxian/yh-quanxian'><image src='../../image/luntan5.jpg'></image></navigator>
-      <navigator class='yours' url='../quanxian/quanxian'>
-        <text>你的我的</text>
-      </navigator>
-      <text class='data'>2019-12-21 12:00</text>
-    </view>
-    <view class='luntanCon-bot'>
-      <view class='luntanConBot-left'>
-        <icon class='iconfont icon-chakan'></icon>
-        <text>200次</text>
+      <view class='luntan-from'>
+        <text class='form-con'>来自</text>
+        <navigator url='pages/yh-quanxian/yh-quanxian'>
+          <image src='../../image/luntan5.jpg'></image>
+        </navigator>
+        <navigator class='yours' url='../quanxian/quanxian'>
+          <text>你的我的</text>
+        </navigator>
+        <text class='data'>2019-12-21 12:00</text>
       </view>
-      <view class='luntanConBot-con'>
-        <icon class='iconfont icon-pinglun'></icon>
-        <text>20条</text>
-      </view>
-      <view class='luntanConBot-right'>
-        <icon class='iconfont icon-shoucang'></icon>
-        <text>20</text>
-      </view>
-    </view>
-
-    <!-- 聊天 -->
-    <view class='liuyan'>
-      <view class='liuyan-con'>
-      <!-- liuyanyi -->
-        <view class='liuyan1'>
-          <view class='liuyan-img'>
-            <image src="../../image/luntan5.jpg"></image>
-          </view>
-          <view class='liuyan-txt'>
-          <view class='liuyan-con-con'>
-           <text class='liuyan-name'>韩君:</text>
-           <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
-           </view>
-           <view class='liuyan-data'>2019-12-21</view>
-          </view>
-      </view>
-<!-- liuyan2 -->
-<view class='liuyan1'>
-          <view class='liuyan-img'>
-            <image src="../../image/luntan5.jpg"></image>
-          </view>
-          <view class='liuyan-txt'>
-          <view class='liuyan-con-con'>
-           <text class='liuyan-name'>韩君:</text>
-           <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
-           </view>
-           <view class='liuyan-data'>2019-12-21</view>
-          </view>
-          </view>
-<!--  -->
+      <view class='luntanCon-bot'>
+        <view class='luntanConBot-left'>
+          <icon class='iconfont icon-chakan'></icon>
+          <text>200次</text>
+        </view>
+        <view class='luntanConBot-con'>
+          <icon class='iconfont icon-pinglun'></icon>
+          <text>20条</text>
+        </view>
+        <view class='luntanConBot-right'>
+          <icon class='iconfont icon-shoucang'></icon>
+          <text>20</text>
         </view>
       </view>
+
+      <!-- 聊天 -->
+      <view class='liuyan'>
+        <view class='liuyan-con'>
+          <!-- liuyanyi -->
+          <view class='liuyan1'>
+            <view class='liuyan-img'>
+              <image src="../../image/luntan5.jpg"></image>
+            </view>
+            <view class='liuyan-txt'>
+              <view class='liuyan-con-con'>
+                <text class='liuyan-name'>韩君:</text>
+                <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
+              </view>
+              <view class='liuyan-data'>2019-12-21</view>
+            </view>
+          </view>
+          <!-- liuyan2 -->
+          <view class='liuyan1'>
+            <view class='liuyan-img'>
+              <image src="../../image/luntan5.jpg"></image>
+            </view>
+            <view class='liuyan-txt'>
+              <view class='liuyan-con-con'>
+                <text class='liuyan-name'>韩君:</text>
+                <text class='liuyan-nr'>非常棒的分享,谢谢!</text>
+              </view>
+              <view class='liuyan-data'>2019-12-21</view>
+            </view>
+          </view>
+          <!--  -->
+        </view>
+      </view>
+    </view>
   </view>
-</view>
 </navigator>
-<!-- 刷新 -->
-<view class='lt-shuxin'>
-  <icon class='iconfont icon-shuaxin'></icon>
-  <text class='lt-sl'>上拉刷新</text>
-</view>
+
+
+<!-- 内容部分 -->
+<navigator url='../tiezi-detail/tiezi-detail'>
+  <view class='luntanCon'>
+    <view class='luntanCon-con'>
+      <view class='luntanCon-tit'>
+        <text class='luntanConTit-left'>双马尾成为了最佳减龄神器？</text>
+        <text class='luntanConTit-right'>时尚</text>
+      </view>
+      <view class='luntanCon-txt'>
+        <text class='luntan-txt'>
+       除了小朋友，为什么日常生活中很少有人扎双马尾？很村？装嫩？有病？请抛开你对他的偏见吧！
+       低双马尾
+       高双马尾
+       编发双马尾
+       ...
+     </text>
+        <view class='luntan-img'>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan1.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan2.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan3.jpg'></image>
+          </view>
+          <view class='luntan-imgCon'>
+            <image src='../../image/luntan4.jpg'></image>
+          </view>
+        </view>
+        <view class='luntan-from'>
+          <text class='form-con'>来自</text>
+          <navigator url='../quanxian/quanxian'>
+            <image src='../../image/luntan5.jpg'></image>
+          </navigator>
+          <navigator class='yours' url='../quanxian/quanxian'>
+            <text>你的我的</text>
+          </navigator>
+          <text class='data'>2019-12-21 12:00</text>
+        </view>
+        <view class='luntanCon-bot'>
+          <view class='luntanConBot-left'>
+            <icon class='iconfont icon-chakan'></icon>
+            <text>200次</text>
+          </view>
+          <view class='luntanConBot-con'>
+            <icon class='iconfont icon-pinglun'></icon>
+            <text>20条</text>
+          </view>
+          <view class='luntanConBot-right'>
+            <icon class='iconfont icon-shoucang'></icon>
+            <text>20</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </navigator>
+
+  <!-- 刷新 -->
+  <view class='lt-shuxin'>
+    <icon class='iconfont icon-shuaxin'></icon>
+    <text class='lt-sl'>上拉刷新</text>
+  </view>

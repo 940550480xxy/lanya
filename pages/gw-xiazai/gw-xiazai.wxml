@@ -46,8 +46,6 @@
 <view class='yx-bot'>
   <view class='hr'></view>
   <view class='yx-bot-cen'>
-    <navigator url='../gw-xiazai/gw-xiazai'>
-      <button class='yx-log'>下载</button>
-    </navigator>
+    <button class='yx-log'>下载(1)</button>
   </view>
 </view>

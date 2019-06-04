@@ -116,7 +116,7 @@
 }
 
 .luntan-from {
-  width: 55%;
+  width: 53%;
   margin-top: 20rpx;
   display: flex;
   justify-content: space-between;
@@ -140,17 +140,11 @@
 
 .xiangmu-con {
   width: 24%;
-  /* display: flex;
-  flex-direction: column; *//* overflow: hidden; */
 }
 
 .xiangmu-icon1 {
   font-size: 168rpx;
-  color: #3594ff;
-}
-
-.xiangmu-icon {
-  /* margin-top: 94rpx; */
+  color: #8E8E8E;
 }
 
 .xiangmu-ai {

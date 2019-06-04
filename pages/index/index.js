@@ -10,7 +10,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showDialog: false,
-    testShowStr: false
+    testShowStr: false,
+    flieList: [],
+    hidden:true,
+    flag:false,
+    x:0,
+    y:0,
+    disabled: true,
+    elements: []
   },
   Navigation: function (event) {
     var that = this;
@@ -38,12 +45,26 @@ Page({
     })
   },
   onLoad: function () {
+
+    var query = wx.createSelectorQuery();
+    var nodesRef = query.selectAll(".item");
+    nodesRef.fields({
+      dataset: true,
+      rect: true
+
+    }, (result) => {
+      this.setData({
+        elements: result
+      })
+    }).exec()
+
+    // 上传图片
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+  } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -64,7 +85,25 @@ Page({
         }
       })
     }
+    this.getFlieList()
   },
+  getFlieList() {
+    var listData = [
+      {"name": "小程序.bat", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"},
+      {"name": "大程序，bat", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"},
+      {"name": "小程序小程序", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"},
+      {"name": "小程序小程序小程序", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"},
+      {"name": "小程序小程序", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"}
+    ]
+    this.setData({
+      flieList: listData
+    })
+  },
+  // groupList(){
+  //   var group = [
+  //     {"name":"图片"},
+  //   ]
+  // },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -99,8 +138,94 @@ Page({
 
       })
     }
+  },
+  // 添加组弹框
+  showtip:function(){
+    wx.showModal({
+  title: '新建组',
+  content: '永久关闭',
+  success(res) {
+    if (res.confirm) {
+      console.log('否')
+    } else if (res.cancel) {
+      console.log('是')
+    }
   }
+})
+  },
+  // 长按拖拽排序
+  //长按
+  //长按
+  _longtap: function (e) {
+    const detail = e.detail;
+    this.setData({
+      x: e.currentTarget.offsetLeft,
+      y: e.currentTarget.offsetTop
+    })
+    this.setData({
+      hidden: false,
+      flag: true
+    })
 
+  },
+  //触摸开始
+  touchs: function (e) {
+    this.setData({
+      beginIndex: e.currentTarget.dataset.index
+    })
+  },
+  //触摸结束
+  touchend: function (e) {
+    if (!this.data.flag) {
+      return;
+    }
+    const x = e.changedTouches[0].pageX
+    const y = e.changedTouches[0].pageY
+    const list = this.data.elements;
+    let data = this.data.data
+    for (var j = 0; j < list.length; j++) {
+      const item = list[j];
+      if (x > item.left && x < item.right && y > item.top && y < item.bottom) {
+        const endIndex = item.dataset.index;
+        const beginIndex = this.data.beginIndex;
+        //向后移动
+        if (beginIndex < endIndex) {
+          let tem = data[beginIndex];
+          for (let i = beginIndex; i < endIndex; i++) {
+            data[i] = data[i + 1]
+          }
+          data[endIndex] = tem;
+        }
+        //向前移动
+        if (beginIndex > endIndex) {
+          let tem = data[beginIndex];
+          for (let i = beginIndex; i > endIndex; i--) {
+            data[i] = data[i - 1]
+          }
+          data[endIndex] = tem;
+        }
+
+        this.setData({
+          data: data
+        })
+      }
+    }
+    this.setData({
+      hidden: true,
+      flag: false
+    })
+  },
+  //滑动
+  touchm: function (e) {
+    if (this.data.flag) {
+      const x = e.touches[0].pageX
+      const y = e.touches[0].pageY
+      this.setData({
+        x: x - 75,
+        y: y - 45
+      })
+    }
+  }
 })
 // wx.showModal({
 //   title: '提是否打开蓝牙？',

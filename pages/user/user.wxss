@@ -38,8 +38,8 @@
 .user-chengjiu{
   font-size: 28rpx;
 }
-.icon-chengjiu{
-  color: #3594FF;
+.icon-cgengjiu{ 
+  color: #0CEBF9;
 }
 .icon-chengjiu1{
   color: #FFB135;

@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "论坛",
-  "usingComponents": {}
+  "usingComponents": {},
+  "enablePullDownRefresh": true
 }

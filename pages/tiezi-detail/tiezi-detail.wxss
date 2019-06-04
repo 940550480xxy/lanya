@@ -228,41 +228,49 @@ page {
 /* 底部 */
 
 .tiezi-bot {
-  padding: 0 26rpx;
+  padding: 19rpx 26rpx;
+  border-top: 1px solid #ededed;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+z-index: 2;
 }
 
-.tit-bot-top {
-  padding: 21rpx 0;
-  border-top: 1px solid #EDEDED;
-}
 
-.tiezi-bot-top-icon {
+.tit-bot-bot {
+  /* padding: 0 0 19rpx 0; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.tit-bot-bot{
-padding:0 0 19rpx 0;
-display: flex;
-justify-content: space-between;
-}
-.tit-bot-input {
-  width: 532rpx;
+
+.tit-bot-left {
   background: rgba(241, 241, 241, 1);
   border-radius: 4rpx;
-font-size:28rpx;
-font-weight:500;
-color:rgba(142,142,142,1);
-padding:5rpx 19rpx;
-/* line-height: 60rpx; */
+  width: 532rpx;
+  padding: 5rpx 19rpx;
+  display: flex;
+  justify-content: space-between;
 }
-.tit-bot-btn{
-background:rgba(72,155,254,1);
-border-radius:4rpx;
-font-size:28rpx;
-font-weight:bold;
-color:rgba(255,255,255,1);
-display: block;
-padding: 0 28rpx;
-line-height: 60rpx;
-margin: 0;
+
+.liuyan-add{
+  color:#424242;
+  font-size:42rpx;
+}
+
+.tit-bot-input {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(142, 142, 142, 1);
+}
+
+.tit-bot-btn {
+  background: rgba(72, 155, 254, 1);
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  padding: 0 28rpx;
+  line-height: 60rpx;
+  margin: 0 0 0 18rpx;
 }

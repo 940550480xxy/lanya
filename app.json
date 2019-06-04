@@ -2,6 +2,9 @@
   "usingComponents": {},
   "pages": [
     "pages/index/index",
+    "pages/test/test",
+    "pages/sc-chose/sc-chose",
+    "pages/luntan/luntan",
     "pages/user-guanzhu/user-guanzhu",
     "pages/user-jinyan/user-jinyan",
     "pages/tiezi-detail/tiezi-detail",
@@ -12,17 +15,16 @@
     "pages/game-pinglun/game-pinglun",
     "pages/shangchuan/shangchuan",
     "pages/game-shuru/game-shuru",
-    "pages/luntan/luntan",
     "pages/game-chose/game-chose",
     "pages/guanwang/guanwang",
     "pages/gamedan/gamedan",
-    "pages/sc-chose/sc-chose",
     "pages/sc-chose1/sc-chose1",
     "pages/yh-quanxian/yh-quanxian",
     "pages/quanxian/quanxian",
     "pages/search/search",
     "pages/user-zhiding/user-zhiding",
-    "pages/user-jiajing/user-jiajing"
+    "pages/user-jiajing/user-jiajing",
+    "pages/gw-xiazai/gw-xiazai"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,6 +34,7 @@
   },
   "tabBar": {
     "position": "bottom",
+    "selectedColor": "#3393FF",
     "list": [
       {
         "iconPath": "image/shebei2.png",
@@ -58,6 +61,11 @@
         "text": "用户"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

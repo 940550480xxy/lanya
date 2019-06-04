@@ -7,7 +7,7 @@
       <view class='user-top-cen-cen'>
         <view class='user-top-cen-top'>
           <text class='user-tit'>西瓜头</text>
-          <icon class='iconfont icon-chengjiu user-chengjiu'></icon>
+          <icon class='iconfont icon-cgengjiu user-chengjiu'></icon>
           <icon class='iconfont icon-chengjiu1 user-chengjiu'></icon>
           <icon class='iconfont icon-chengjiu2 user-chengjiu'></icon>
           <icon class='iconfont icon-chengjiu3 user-chengjiu'></icon>

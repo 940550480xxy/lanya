@@ -53,35 +53,93 @@
     <!-- <view class='in-con-group'> -->
     <navigator class='in-con-nav'>
       <view class='in-con-icon'>
-        <icon class='iconfont icon-wenjianjia1'></icon>
+        <image src='../../image/xitongzu.png' class='xitongzu'></image>
       </view>
       <text style='font-size:28rpx;color:#424242;'>A组</text>
     </navigator>
     <navigator class='in-con-nav'>
       <view class='in-con-icon'>
-        <icon class='iconfont icon-wenjianjia1'></icon>
+        <image src='../../image/xitongzu.png' class='xitongzu'></image>
       </view>
       <text style='font-size:28rpx;color:#424242;'>B组</text>
     </navigator>
     <navigator class='in-con-nav'>
       <view class='in-con-icon'>
-        <icon class='iconfont icon-wenjianjia1'></icon>
+        <image src='../../image/xitongzu.png' class='xitongzu'></image>
       </view>
       <text style='font-size:28rpx;pxcolor:#424242;'>全部</text>
     </navigator>
     <navigator class='in-con-nav'>
+      <view class='in-con-icon'>
+        <image src='../../image/zu.png' class='xitongzu'></image>
+      </view>
+      <text style='font-size:28rpx;pxcolor:#424242;'>视频</text>
+    </navigator>
+    <navigator class='in-con-nav'>
+      <view class='in-con-icon'>
+        <image src='../../image/zu.png' class='xitongzu'></image>
+      </view>
+      <text style='font-size:28rpx;pxcolor:#424242;'>全部</text>
+    </navigator>
+    <navigator class='in-con-nav'>
+      <view class='in-con-icon'>
+        <image src='../../image/zu.png' class='xitongzu'></image>
+      </view>
+      <text style='font-size:28rpx;pxcolor:#424242;'>音频</text>
+    </navigator>
+    <navigator class='in-con-nav' bindtap='showtip'>
       <view class='in-con-icon' style='background:#F4F4F4;'>
         <icon class='iconfont icon-wenjianjia02' style='color:#C7C7C7;font-size:34rpx;'></icon>
       </view>
       <text style='font-size:28rpx;pxcolor:#424242;'>添加组</text>
     </navigator>
+    <!-- <block class='item' wx:for="{{groupList}}" wx:key="item">
+      <navigator class='in-con-nav'>
+      <view class='in-con-icon'>
+        <icon class='iconfont icon-xitongzu'></icon>
+      </view>
+      <text style='font-size:28rpx;pxcolor:#424242;'>{{item.name}}</text>
+    </navigator>
+    </block> -->
     <!-- </view> -->
   </view>
 </view>
 <!-- 项目栏部分 -->
 <view class='aiHua'>
   <view class='aiYou'>
-    <view class='aiYou-li' bindtap='jump'>
+    <!-- {"name": "adsfasdfasdfasd", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"}, -->
+    <block class='item' wx:for="{{flieList}}" wx:key="item">
+      <view class='aiYou-li' bindtap='jump' bindlongpress='_longtap' bindtouchstart='touchs' bindtouchend='touchend' bindtouchmove='touchm'>
+        <movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
+          <!-- <view class='item-move' hidden='{{hidden}}'>
+          </view> -->
+        </movable-view>
+        <view class='aihua01-left' data-id="{{item.id}}">
+          <text class='in-count'>{{index + 1}}</text>
+          <icon wx:if="{{item.type == '1'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
+          <icon wx:if="{{item.type == '2'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
+          <icon wx:if="{{item.type == '3'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
+          <icon wx:if="{{item.type == '4'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
+          <view class='aihua01'>
+            <text class='aihua-con'>{{item.name}}</text>
+            <view style='display:flex;justify-content:start;'>
+              <text class='aihua-date' style='font-size:20rpx;color:#B6B6B6;float:left;'>
+                {{item.time}}
+              </text>
+            </view>
+            <view></view>
+          </view>
+        </view>
+        <view class='aihua01-right'>
+          <view class='in-xuanzhong'>
+            <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
+            <icon class='iconfont icon-xuanze'></icon>
+          </view>
+          <text class='aihua01-size'>{{item.max}}</text>
+        </view>
+      </view>
+    </block>
+    <!-- <view class='aiYou-li' bindtap='jump'>
       <view class='aihua01-left'>
         <text class='in-count'>01</text>
         <icon class='iconfont icon-wenjianjia2 wjj-icon'></icon>
@@ -100,19 +158,15 @@
       </view>
       <view class='aihua01-right'>
         <view class='in-xuanzhong'>
-          <!-- <text class='in-xuanzhong01'></text> -->
           <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
           <icon class='iconfont icon-xuanze'></icon>
-          <!-- <image catchtap='change' wx:if="{{click}}" src='../../image/weixuanze.png' class='icon-weixuanze'></image>
-        <image wx:else src='../../image/xuanze.png' class='icon-xuanze'></image> -->
         </view>
         <text class='aihua01-size'>2.0M</text>
       </view>
-    </view>
-    <view class='aiYou-li'>
+    </view> -->
+    <!-- <view class='aiYou-li'>
       <view class='aihua01-left'>
         <text class='in-count'>02</text>
-        <!-- <icon class='iconfont icon-word wjj-icon'></icon> -->
         <image src='../../image/word-icon.png'></image>
         <view class='aihua01'>
           <text class='aihua-con'>《爱YOU》app项目</text>
@@ -129,14 +183,13 @@
         <view class='in-xuanzhong' style='float:right'>
           <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="1"></icon>
           <icon class='iconfont icon-xuanze'></icon>
-          <!-- <icon class='iconfont icon-xuanzhong' style='font-size:20rpx;position:absolute;left:0;top:0;display:block;'></icon> -->
         </view>
         <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
           20.2M
         </text>
       </view>
-    </view>
-    <view class='aiYou-li'>
+    </view> -->
+    <!-- <view class='aiYou-li'>
       <view class='aihua01-left'>
         <text class='in-count'>03</text>
         <image src='../../image/ppt-icon.png'></image>
@@ -157,14 +210,13 @@
         <view class='in-xuanzhong' style='float:right'>
           <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
           <icon class='iconfont icon-xuanze'></icon>
-          <!-- <icon class='iconfont icon-xuanzhong' style='font-size:20rpx;position:absolute;left:0;top:0;display:block;'></icon> -->
         </view>
         <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
           28.2M
         </text>
       </view>
-    </view>
-    <view class='aiYou-li'>
+    </view> -->
+    <!-- <view class='aiYou-li'>
       <view class='aihua01-left'>
         <text class='in-count'>04</text>
         <image src='../../image/pdf-icon.png'></image>
@@ -185,13 +237,12 @@
         <view class='in-xuanzhong' style='float:right'>
           <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
           <icon class='iconfont icon-xuanze'></icon>
-          <!-- <icon class='iconfont icon-xuanzhong' style='font-size:20rpx;position:absolute;left:0;top:0;display:block;'></icon> -->
         </view>
         <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
           28.2M
         </text>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>
 <!-- footer -->
@@ -200,12 +251,12 @@
   <text>移动</text>
 </view> -->
 <!-- 底部 -->
- <!-- <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+<!-- <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
   <view class="zan-dialog__mask" bindtap="toggleDialog" />
   <view class="zan-dialog__container">
     <view style='padding:100rpx;'> -->
-      <!-- 弹窗1 -->
-      <!-- <view class='orLanYa-opc'></view>
+<!-- 弹窗1 -->
+<!-- <view class='orLanYa-opc'></view>
       <view class='orLanYa'>
         <view class='orLanYa-con'>
           <view class='orLanYa-tit'>是否打开蓝牙</view>
@@ -223,5 +274,4 @@
       </view>
     </view>
   </view>
-</view>  -->
-
+</view>   -->

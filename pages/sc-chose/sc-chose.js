@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files: []
+    files: [],
+    city: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getLocation()
+    
   },
 
   /**
@@ -62,6 +64,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 上传图片
   chooseImageTap:function(){
     wx.chooseImage({
       success(res) {
@@ -76,6 +79,30 @@ Page({
           success(res) {
             const data = res.data
             //do something
+          }
+        })
+      }
+    })
+  },
+  // 获取当前位置
+  getLocation() {
+    wx.getLocation({
+      type: 'wgs84', //默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 
+      desc: '你的位置信息将用于小程序位置接口的效果展示',
+      success: res => {
+        var longitude = res.longitude
+        var latitude = res.latitude
+        wx.request({
+          url: `https://api.map.baidu.com/geocoder/v2/?ak=XLYlP33bKQlNITbeTPLSoCgHaqYaXxXc&location=${latitude},${longitude}&output=json`,
+          data: {},
+          header: {
+            'Content-Type': 'application/json'
+          },
+          success: res => {
+            var city = res.data.result.addressComponent.city;
+            this.setData({
+              city: city
+            })
           }
         })
       }

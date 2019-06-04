@@ -90,18 +90,12 @@
 <!-- 底部 -->
 <view class="tiezi-bot">
   <view class="tiezi-bot-con">
-    <view class="tit-bot-top">
-      <view class="tiezi-bot-top-icon">
-        <icon class="iconfont icon-icon-test"></icon>
-        <icon class="iconfont icon-biaoqing"></icon>
-        <icon class="iconfont icon-gengduo"></icon>
-      </view>
-    </view>
-    <!-- <view class='tit-bot-bot'> -->
-      <view class='tit-bot-bot'>
+    <view class='tit-bot-bot'>
+      <view class='tit-bot-left'>
         <input placeholder='请输入发表内容...' class='tit-bot-input'></input>
-        <button class='tit-bot-btn'>发送</button>
+        <icon class='iconfont icon-tianjia1 liuyan-add'></icon>
       </view>
+      <button class='tit-bot-btn'>发送</button>
     </view>
-  <!-- </view> -->
+  </view>
 </view>
