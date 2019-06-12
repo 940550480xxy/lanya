@@ -1,18 +1,45 @@
 // pages/quanxian/quanxian.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    gwList:[],
+    requestImgUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      requestImgUrl: app.globalData.requestImgUrl
+    })
+    var that = this;
+    wx.request({
+      url: `${app.globalData.requestUrl}/Official/official_type`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      success: res => {
+        res = app.null2str(res.data)
+        if (res.code == '1') {
+          that.setData({
+            gwList: res.data,
+          })
+        } else {
+          wx.showModal({
+            title: '',
+            content: res.msg,
+            showCancel: false
+          })
+        }
+        console.log(res.data);
+      }
+    })
   },
 
   /**

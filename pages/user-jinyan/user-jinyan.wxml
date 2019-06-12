@@ -1,51 +1,27 @@
- <!-- 关注的人 -->
-    <view class='gz-con gz-person'>
-      <view class='gz-con-ul' id='gz-con-ul-id'>
-        <view class='gz-con-li'>
-          <view class='gz-top-cen'>
-            <view class='gz-top-cen-chengjiu'>
-              <view class='gz-top-img'>
-                <image src="../../image/luntan5.jpg"></image>
-              </view>
-              <view class='gz-top-cen-cen'>
-                <view class='gz-top-cen-top'>
-                  <text class='gz-tit'>西瓜头</text>
-                </view>
-                <view class='gz-top-cen-bot'>
-                  小可爱们，快来关注呦！
-                </view>
+<view class='gz-con gz-person'>
+    <block class="guanzhurenList" wx:for="{{guanzhurenList}}" wx:key="{{index}}" wx:for-item="item">
+      <view class='gz-con-li'>
+        <view class='gz-top-cen'>
+          <view class='gz-top-cen-chengjiu'>
+            <view class='gz-top-img'>
+              <image src="item.avataUrl"></image>
+            </view>
+            <view class='gz-top-cen-cen'>
+              <view class='gz-top-cen-top'>
+                <text class='gz-tit'>{{item.nickname}}</text>
               </view>
             </view>
-            <view class='gz-top-right'>
-              <button class='gz-guanzhu'>取消</button>
-              <!-- <button class='gz-guanzhued'>已关注</button> -->
-            </view>
+          </view>
+          <view class='gz-top-right'>
+            <!-- <view data-index="{{index}}" class="{{item.str=='0'?'gz-guanzhu':'gz-guanzhued'}}" catchtap="focusTap" >
+              <span wx:if="{{item.str == '1'}}">关注</span>
+              <span wx:if="{{item.str == '0'}}">已关注</span>
+            </view> -->
+              <button class="jy-quxiao-btn" bindtap='jyQuxiaos'>取消</button>
+
+
           </view>
         </view>
       </view>
-      <view class='gz-con-ul' id='gz-con-ul-id'>
-        <view class='gz-con-li'>
-          <view class='gz-top-cen'>
-            <view class='gz-top-cen-chengjiu'>
-              <view class='gz-top-img'>
-                <image src="../../image/luntan5.jpg"></image>
-              </view>
-              <view class='gz-top-cen-cen'>
-                <view class='gz-top-cen-top'>
-                  <text class='gz-tit'>南nan瓜头</text>
-                </view>
-                <view class='gz-top-cen-bot'>
-                  小可爱们，快来关注呦！
-                </view>
-              </view>
-            </view>
-            <view class='gz-top-right'>
-              <button class='gz-guanzhu'>取消</button>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-   
-<!-- </view> -->
- 
+    </block>
+  </view>

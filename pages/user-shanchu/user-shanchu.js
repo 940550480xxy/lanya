@@ -1,18 +1,48 @@
-// pages/delete-jilu/delete-jilu.js
+// pages/user-xiazai/user-xiazai.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    // getFlieList() {
+    shanchuList: []
   },
+  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (this.data.shanchuList.length > 0) {
+      return ''
+    }
+    wx.request({
+      url: `${app.globalData.requestUrl}/User/del_post`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        uid: '1'
+      },
+      method: "POST",
+      success: res => {
+        res = app.null2str(res.data)
+        if (res.code == '1') {
+          this.setData({
+            shanchuList: res.data
+          })
+        } else {
+          wx.showModal({
+            title: '',
+            content: res.msg,
+            showCancel: false
+          })
+        }
+        console.log(res.data);
+      }
+    })
   },
 
   /**

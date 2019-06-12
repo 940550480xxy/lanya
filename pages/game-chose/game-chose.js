@@ -5,7 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+   gameList:[
+     {
+       name:"狐狸的尾巴",
+       pic1:"/image/luntan1.jpg"
+     },{
+       name:"和平精英",
+       "pic1":"/image/luntan2.jpg"
+     }, {
+       name: "QQ飞车",
+       "pic1": "/image/luntan3.jpg"
+     }, {
+       name: "冰果消消",
+       "pic1": "/image/luntan3.jpg"
+     }, {
+       name: "和平精英",
+       "pic1": "/image/luntan4.jpg"
+     },
+   ]
   },
 
   /**

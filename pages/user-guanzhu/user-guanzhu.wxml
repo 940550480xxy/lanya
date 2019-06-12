@@ -3,111 +3,55 @@
   <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
 </view>
 
-  <!-- 关注的人 -->
+<!-- 关注的人 -->
 <view hidden="{{currentTab!==0}}">
   <view class='gz-con gz-person'>
-    <view class='gz-con-ul' id='gz-con-ul-id'>
+    <block class="guanzhurenList" wx:for="{{guanzhurenList}}" wx:key="{{index}}">
       <view class='gz-con-li'>
         <view class='gz-top-cen'>
           <view class='gz-top-cen-chengjiu'>
             <view class='gz-top-img'>
-              <image src="../../image/luntan5.jpg"></image>
+              <image src="{{item.avatarUrl}}"></image>
             </view>
             <view class='gz-top-cen-cen'>
               <view class='gz-top-cen-top'>
-                <text class='gz-tit'>西瓜头</text>
-              </view>
-              <view class='gz-top-cen-bot'>
-                小可爱们，快来关注呦！
+                <text class='gz-tit'>{{item.nickname}}</text>
               </view>
             </view>
           </view>
           <view class='gz-top-right'>
-            <view id='cancel' class='gz-guanzhu' data-index="0" catchtap="cancelTap" style="transition: transform 200ms linear 0ms; transform: {{type?'scaleY(0)':' scaleX(1)'}} {{type?'translate(-52px, 0px)':'translate(6px, 0px) '}} ; transform-origin: left 50% 0px;" >关注</view>
-            <view id="focusOther" class='gz-guanzhued' catchtap="focusTap" style="transition: transform 200ms linear 0ms; transform: scaleX({{type?1:0}}); transform-origin: right top 0px;" >已关注</view>
+            <view data-index="{{index}}" data-id="{{item.id}}" class="{{item.str=='0'?'gz-guanzhu':'gz-guanzhued'}}" catchtap="focusTap">
+              <span wx:if="{{item.str == '0'}}">关注</span>
+              <span wx:if="{{item.str == '1'}}">已关注</span>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-    <view class='gz-con-ul' id='gz-con-ul-id'>
-      <view class='gz-con-li'>
-        <view class='gz-top-cen'>
-          <view class='gz-top-cen-chengjiu'>
-            <view class='gz-top-img'>
-              <image src="../../image/luntan5.jpg"></image>
-            </view>
-            <view class='gz-top-cen-cen'>
-              <view class='gz-top-cen-top'>
-                <text class='gz-tit'>南nan瓜头</text>
-              </view>
-              <view class='gz-top-cen-bot'>
-                小可爱们，快来关注呦！
-              </view>
-            </view>
-          </view>
-          <view class='gz-top-right'>
-            <view id='cancel' class='gz-guanzhu' catchtap="cancelTap" style="transition: transform 200ms linear 0ms; transform: {{type?'scaleY(0)':' scaleX(1)'}} {{type?'translate(-52px, 0px)':'translate(6px, 0px) '}} ; transform-origin: left 50% 0px;" >关注</view>
-            <view id="focusOther" class='gz-guanzhued' catchtap="focusTap" style="transition: transform 200ms linear 0ms; transform: scaleX({{type?1:0}}); transform-origin: right top 0px;" >已关注</view>
-          </view>
-        </view>
-      </view>
-    </view>
+    </block>
   </view>
-
 </view>
 
-<!--搜索-->
-<view hidden="{{currentTab!==1}}">
 
-  <!-- 关注的帖子 -->
-  <view class='gz-con gz-tiezi'>
-    <view class='gz-tiezi-li'>
-      <view class='gz-tiezi-left'>
-        <view class='gz-tiezi-img'>
-          <image src='../../image/luntan2.jpg'></image>
+<!-- 关注的帖子 -->
+<view class='gz-con gz-tiezi'>
+  <view hidden='{{currentTab!==1}}'>
+    <block class="guanzhutieziList" wx:for="{{guanzhutieziLists}}" wx:key="{{item}}">
+      <view class='gz-tiezi-li'>
+        <view class='gz-li-top'>
+          <navigator url='' class='gz-tiezi-li-img'>
+            <image src='{{item.avatarUrl}}'></image>
+          </navigator>
+          <!-- <view class='gz-tiezi-li-right'> -->
+            <navigator url='' class='gz-tiezi-li-yonghu'>{{item.nickname}}</navigator>
+            <text class='gz-li-date'>{{item.createTime}}</text>
+          <!-- </view> -->
+        </view>
+        <view class='gz-li-right-bot'>
+          <text class='gz-li-bot-txt'>{{item.title}}</text>
+          <span class='gz-li-bot-span'>{{item.label}}</span>
         </view>
       </view>
-      <view class='gz-tiezi-right'>
-        <view class="gz-li-tit">
-          <text class='gz-li-tit-txt'>双马尾成为了最佳减龄神器？</text>
-          <view class='gz-li-tit-rig'>时尚</view>
-        </view>
-        <view class='gz-from'>
-          <text class='gz-form-con'>来自</text>
-          <navigator url='../quanxian/quanxian'>
-            <image src='../../image/luntan5.jpg'></image>
-          </navigator>
-          <navigator class='gz-yours'>
-            <text>你的我的</text>
-          </navigator>
-          <text class='gz-data'>2019-12-21 12:00</text>
-        </view>
-      </view>
-    </view>
-    <view class='gz-tiezi-li'>
-      <view class='gz-tiezi-left'>
-        <view class='gz-tiezi-img'>
-          <image src='../../image/luntan2.jpg'></image>
-        </view>
-      </view>
-      <view class='gz-tiezi-right'>
-        <view class="gz-li-tit">
-          <text class='gz-li-tit-txt'>胃真的会被越撑越大，越饿越小，是的吧哈哈哈？</text>
-          <view class='gz-li-tit-rig'>健康</view>
-        </view>
-        <view class='gz-from'>
-          <text class='gz-form-con'>来自</text>
-          <navigator url='../quanxian/quanxian'>
-            <image src='../../image/luntan5.jpg'></image>
-          </navigator>
-          <navigator class='gz-yours'>
-            <text>你的还是我的</text>
-          </navigator>
-          <text class='gz-data'>2019-12-21 12:00</text>
-        </view>
-      </view>
-    </view>
-
+    </block>
   </view>
 </view>
 
@@ -115,51 +59,29 @@
 <view hidden="{{currentTab!==2}}">
   <!-- 粉丝 -->
   <view class='gz-con gz-fensi'>
-    <view class='gz-con-ul' id='gz-con-ul-id'>
-      <view class='gz-con-li'>
-        <view class='gz-top-cen'>
-          <view class='gz-top-cen-chengjiu'>
-            <view class='gz-top-img'>
-              <image src="../../image/luntan5.jpg"></image>
-            </view>
-            <view class='gz-top-cen-cen'>
-              <view class='gz-top-cen-top'>
-                <text class='gz-tit'>西瓜头</text>
+    <block class="fensiList" wx:for="{{fensiList}}" wx:key="{{item}}">
+      <view class='gz-con-ul' id='gz-con-ul-id'>
+        <view class='gz-con-li'>
+          <view class='gz-top-cen'>
+            <view class='gz-top-cen-chengjiu'>
+              <view class='gz-top-img'>
+                <image src="{{item.avatarUrl}}"></image>
               </view>
-              <view class='gz-top-cen-bot'>
-                小可爱们，快来关注呦！
+              <view class='gz-top-cen-cen'>
+                <view class='gz-top-cen-top'>
+                  <text class='gz-tit'>{{item.nickname}}</text>
+                </view>
               </view>
             </view>
-          </view>
-          <view class='gz-top-right'>
-            <button class='gz-guanzhu'>关注</button>
-            <!-- <button class='gz-guanzhued'>已关注</button> -->
+            <view class='gz-top-right'>
+              <view data-index="{{index}}" data-id="{{item.id}}" class="{{item.str=='0'?'gz-guanzhu':'gz-guanzhued'}}" catchtap="focusTaps">
+                <span wx:if="{{item.str == '0'}}">关注</span>
+                <span wx:if="{{item.str == '1'}}">已关注</span>
+              </view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-    <view class='gz-con-ul' id='gz-con-ul-id'>
-      <view class='gz-con-li'>
-        <view class='gz-top-cen'>
-          <view class='gz-top-cen-chengjiu'>
-            <view class='gz-top-img'>
-              <image src="../../image/luntan5.jpg"></image>
-            </view>
-            <view class='gz-top-cen-cen'>
-              <view class='gz-top-cen-top'>
-                <text class='gz-tit'>南nan瓜头</text>
-              </view>
-              <view class='gz-top-cen-bot'>
-                小可爱们，快来关注呦！
-              </view>
-            </view>
-          </view>
-          <view class='gz-top-right'>
-            <button class='gz-guanzhu'>关注</button>
-            <button class='gz-guanzhued'>已关注</button>
-          </view>
-        </view>
-      </view>
-    </view>
+    </block>
   </view>
 </view>

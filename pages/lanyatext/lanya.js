@@ -93,7 +93,7 @@ Page({
 
 
 
-  
+
   createBLEConnection(e) {
     const ds = e.currentTarget.dataset
     const deviceId = ds.deviceId

@@ -1,18 +1,41 @@
 // pages/user-jiajing/user-jiajing.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    jiajingList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: `${app.globalData.requestUrl}/User/user_essence`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      success: res => {
+        res = app.null2str(res.data)
+        if (res.code == '1') {
+          that.setData({
+            jiajingList: res.data,
+          })
+        } else {
+          wx.showModal({
+            title: '',
+            content: res.msg,
+            showCancel: false
+          })
+        }
+        console.log(res.data);
+      }
+    })
   },
 
   /**

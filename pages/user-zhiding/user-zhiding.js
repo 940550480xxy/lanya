@@ -1,19 +1,48 @@
 // pages/user-zhiding/user-zhiding.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    zhidingList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: `http://192.168.1.168/User/user_top`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      success: res => {
+        // res = app.null2str(res.data)
+        if (res.code == '1') {
+          let zhidingList = res.data
+            let i = 0
+          for (i in zhidingList) {
+            zhidingList[i]["str"] = "0"
+          }
+        that.setData({
+          zhidingList: res.data,
+        })
+        }else{
+          wx.showModal({
+            title: '暂无置顶记录',
+            // content: res.msg,
+            showCancel: false
+          })
+        }
+        console.log(res.data);
+      }
+    })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,13 +1,36 @@
-/* 关注的人 */
 page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: #fff;
+}
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #424242;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background:  rgba(51, 147, 255, 1);
 }
 .gz-con{
   padding: 0 26rpx;
 }
-.gz-con-ul{
-  border-bottom: 1px solid #EDEDED;
-}
+/* 关注的人 */
 .gz-top-cen {
   display: flex;
   justify-content: space-between;
@@ -71,42 +94,24 @@ page{
   position: relative;
 }
 
-.gz-guanzhu {
-  width: auto;
-  padding: 0 35rpx;
+
+.gz-top-right view {
+  width: 120rpx;
+  text-align: center;
   height: 48rpx;
-  background: rgba(51, 147, 255, 1);
   border-radius: 10rpx;
   font-size: 28rpx;
   line-height: 48rpx;
-  color: #fff;
   position: absolute;
   left: 0;
   top: 0;
 }
-.active-tag .gz-guanzhu {
-  background: #03e2ff;
-  color: #fff;
-  border: 1rpx solid #fff;
-}
-.gz-guanzhu::after {
-  border: none;
-}
-
-.gz-guanzhued {
-  width: auto;
-  height: 48rpx;
-  padding: 0 23rpx;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: #eef6ff;
-  border-radius: 8rpx;
-  font-size: 28rpx;
-  line-height: 48rpx;
-  color: #3393ff;
-}
-
-.gz-guanzhued::after {
-  border: none;
+.jy-quxiao-btn{
+  /* width:81rpx;
+height:42rpx; */
+background:#EEF6FF;
+border-radius:10rpx;
+color: #3393FF;
+font-size: 20rpx;
+border: none;
 }

@@ -30,7 +30,6 @@ page{
   height: 4rpx;
   background:  rgba(51, 147, 255, 1);
 }
-
 .gz-con{
   padding: 0 26rpx;
 }
@@ -77,11 +76,6 @@ page{
   color: #424242;
 }
 
-.gz-top-cen-bot {
-  font-size: 28rpx;
-  color: #8e8e8e;
-  margin-top: 17rpx;
-}
 
 .gz-top-bot {
   display: flex;
@@ -98,117 +92,66 @@ page{
   position: relative;
 }
 
-.gz-guanzhu {
-  width: auto;
-  padding: 0 35rpx;
+
+.gz-top-right view {
+  width: 120rpx;
+  text-align: center;
   height: 48rpx;
-  background: rgba(51, 147, 255, 1);
   border-radius: 10rpx;
   font-size: 28rpx;
   line-height: 48rpx;
-  color: #fff;
   position: absolute;
   left: 0;
   top: 0;
 }
-.active-tag .gz-guanzhu {
-  background: #03e2ff;
+.gz-guanzhu {
+  background: #3393FF;
   color: #fff;
-  border: 1rpx solid #fff;
 }
-.gz-guanzhu::after {
-  border: none;
-}
-
 .gz-guanzhued {
-  width: auto;
-  height: 48rpx;
-  padding: 0 23rpx;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: #eef6ff;
-  border-radius: 8rpx;
-  font-size: 28rpx;
-  line-height: 48rpx;
-  color: #3393ff;
+  background:#EEF6FF;
+  color: #3393FF;
 }
 
-.gz-guanzhued::after {
-  border: none;
-}
 
 /* 关注的帖子 */
 .gz-tiezi-li{
-   display: flex;
-  justify-content: flex-start;
-  padding: 42rpx 0;
-  border-bottom: 1px solid #EDEDED;
+  padding: 49rpx 0;
+  border-bottom:1rpx solid #EDEDED; 
 }
-.gz-tiezi-left image{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 10rpx;
-}
-.gz-tiezi-right{
-  margin-left: 22rpx;
-}
-.gz-li-tit{
+.gz-li-top{
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
-.gz-li-tit-txt{
-  font-size: 32rpx;
-  color: #424242;
-  font-weight: bold;
-  max-width: 481rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.gz-li-tit-rig{
-  width: auto;
-  padding:0 14rpx;
-  height: 38rpx;
-  line-height: 38rpx;
-  background:rgba(51,147,255,1);
-border-radius:10rpx;
-color: #fff;
-font-size: 20rpx;
-margin-left: 20rpx;
-}
-
-.gz-from {
-  margin-top: 20rpx;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.gz-form-con {
-  font-size: 24rpx;
-  color: #424242;
-}
-
-.gz-from image {
+.gz-tiezi-li-img image{
   width: 40rpx;
   height: 40rpx;
   border-radius: 50%;
-  margin-left: 20rpx;
 }
-.gz-yours {
+.gz-tiezi-li-yonghu{
   font-size: 24rpx;
-  color: #3393ff;
-  margin-left: 14rpx;
+  color: #3393FF;
+  margin: 0 12rpx;
 }
-
-.gz-yours text {
-  border-bottom: 1px solid #3393ff;
-}
-
-.gz-data {
+.gz-li-date{
   font-size: 20rpx;
-  color: #424242;
-  margin-left: 14rpx;
+  color: #8E8E8E;
 }
-
-/*  */
+.gz-li-bot-txt{
+  font-size: 32rpx;
+  font-weight:bold;
+  color: #424242;
+  margin-left: 46rpx;
+}
+.gz-li-bot-span{
+  width:auto;
+  padding:0 14rpx;
+  line-height: 38rpx;
+height:38rpx;
+background:#3393FF;
+color: #FFFEFE;
+border-radius:10rpx;
+font-size:20rpx; 
+margin-left:18rpx;
+}

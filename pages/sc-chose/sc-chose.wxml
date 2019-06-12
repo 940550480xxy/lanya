@@ -1,21 +1,28 @@
 <view class="xz-top">
   <view class='xz-top-cen'>
     <!-- 底部 -->
-<view class="tiezi-bot">
-  <view class="tiezi-bot-con">
-    <view class='tit-bot-bot'>
-      <view class='tit-bot-left'>
-        <input placeholder='请输入发表内容...' class='tit-bot-input'></input>
+    <view class="tiezi-bot">
+      <view class="tiezi-bot-con">
+        <view class='tit-bot-bot'>
+          <view class='tit-bot-left'>
+            <view class='tit-bot-left-input'>
+              <textarea placeholder='请输入发表内容...' class='tit-bot-input' maxlength="3000" auto-height='true' auto-width='true'></textarea>
+            </view>
+            <view class='tit-bot-right-icon' bindtap='chooseImageTap'>
+              <icon class='iconfont icon-tianjia1 xz-tianjia'></icon>
+            </view>
+          </view>
+          <view>
+            <button class='tit-bot-btn'>发送</button>
+          </view>
+        </view>
       </view>
-      <button class='tit-bot-btn'>发送</button>
     </view>
-  </view>
-</view>
-    <view class='xz-top-imgs'>
-      <view class='xz-top-img xz-top-img1' bindlongpress="deleteImage" data-index="{{index}}">
-        <image src='../../image/luntan1.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img2'>
+    <!-- <view class='xz-top-imgs'>
+,
+xscdsvfd      </block>
+    </view> -->
+    <!-- <view class='xz-top-img xz-top-img2'>
         <image src='../../image/luntan2.jpg' class='xz-top-img1-img1'></image>
       </view>
       <view class='xz-top-img xz-top-img3'>
@@ -32,38 +39,20 @@
       </view>
       <view class='xz-top-img xz-top-img7'>
         <image src='../../image/luntan3.jpg' class='xz-top-img1-img1'></image>
+      </view> -->
+
+
+    <!-- 底部 -->
+    <!-- <view class='xz-bot-bot'>
+      <view class='xz-top-bot'>
+        <view class='xz-top-bot-bot xz-top-bot-left'>
+          <icon class='iconfont icon-dingwei xz-top-bot-left-icon'></icon>
+          <text id='xz-top-bot-dizhi'>{{city}}</text>
+        </view>
+        <view class='xz-top-bot-bot xz-top-bot-right'>
+          <button class='xz-bot-btn'>发布</button>
+        </view>
       </view>
-      <view class='xz-top-img xz-top-img8' bindtap='chooseImageTap'>
-        <text class='xz-top-add'>+</text>
-      </view>
-
-
-
-
-
-    </view>
-    <view class='xz-top-bot'>
-      <view class='xz-top-bot-bot xz-top-bot-left'>
-        <icon class='iconfont icon-dingwei xz-top-bot-left-icon'></icon>
-        <text id='xz-top-bot-dizhi'>{{city}}</text>
-      </view>
-      <view class='xz-top-bot-bot xz-top-bot-right'>
-        <button class='xz-bot-btn'>发布</button>
-      </view>
-    </view>
-  </view>
-</view>
-<!-- 分割线 -->
-<view class='xz-fenge'></view>
-<!-- 底部 -->
-<view class='xz-bot'>
-  <view class='xz-bot-icon'>
-    <icon class='iconfont icon-icon-test xz-bot-icon-cen'></icon>
-  </view>
-  <view class='xz-bot-icon'>
-    <icon class='iconfont icon-biaoqing xz-bot-icon-cen'></icon>
-  </view>
-  <view class='xz-bot-icon'>
-    <icon class='iconfont icon-gengduo xz-bot-icon-cen'></icon>
+    </view> -->
   </view>
 </view>

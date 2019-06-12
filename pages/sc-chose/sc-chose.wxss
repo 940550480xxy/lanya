@@ -1,6 +1,9 @@
+page{
+   background:#fff;
+}
 .xz-top{
   width: 100%;
-  background:#fff;
+ 
 }
 .xz-top-cen{
   padding: 0 26rpx 30rpx 26rpx;
@@ -24,11 +27,19 @@
   border-radius: 4rpx;
   width: 532rpx;
   padding: 5rpx 19rpx;
+  display: flex;
+  justify-content: space-between;
 }
 .tit-bot-input {
   font-size: 28rpx;
   font-weight: 500;
   color: rgba(142, 142, 142, 1);
+  min-height: 50rpx;
+  max-width: 470rpx;
+}
+.xz-tianjia{
+  font-size: 30rpx;
+  color: #424242;
 }
 
 .tit-bot-btn {
@@ -52,7 +63,7 @@
 }
 .xz-top-imgs{
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   flex-wrap: wrap;
 }
 .xz-top-img{
@@ -64,6 +75,7 @@
   text-align: center;
   line-height: 137rpx;
   position: relative;
+  margin-left: 11rpx;
 }
 .xz-top-img1-img1{
   width: 160rpx;
@@ -75,7 +87,8 @@
   color: #fff;
 }
 .xz-top-bot{
-  margin-top: 535rpx;
+  /* margin-top: 535rpx; */
+
   display: flex;
   justify-content: space-between;
 }
@@ -120,6 +133,12 @@
   z-index: 3;
 }
 /* 底部 */
+/* .xz-bot-bot{
+  position: fixed;
+  bottom: 0;
+  left: 26rpx;
+  
+}
 .xz-bot{
   width: 100%;
  height: 88rpx;
@@ -127,9 +146,6 @@ line-height: 88rpx;
   display: flex;
   justify-content: space-around;
   background: #fff;
-  /* position: fixed;
-  bottom:0;
-  left: 0; */
 }
 .xz-bot-icon{
   width: 33.3%;
@@ -137,4 +153,4 @@ line-height: 88rpx;
 .xz-bot-icon-cen{
   font-size: 48rpx;
   color: #424242;
-}
+} */

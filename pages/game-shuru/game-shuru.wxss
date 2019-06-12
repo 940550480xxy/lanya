@@ -6,30 +6,12 @@ page{
   background: #fff;
 }
 .sr-top-cen{
-  padding:0 26rpx;
+  padding:30rpx 26rpx;
   text-align: center;
   margin-bottom: 170rpx;
   overflow: hidden;
   overflow-y: auto;
   background: #fff;
-}
-.sr-top-tit{
-  padding: 55rpx 0;
-}
-.sr-top-tit-start{
-  color: #FCB929;
-  display: flex;
-  justify-content: center;
-}
-.sr-start{
-font-size: 176rpx;
-width:176rpx;
-height:28rpx;
-}
-.sr-pingfen{
-  font-size: 20rpx;
-  color: #8E8E8E;
-  margin-top: 18rpx;
 }
 .sr-textarea{
   padding: 29rpx 21rpx;

@@ -1,74 +1,30 @@
-<!--pages/user-news/user-news.wxml-->
-<!-- <text>pages/user-news/user-news.wxml</text> -->
-<view class='xiaoxi-ul'>
-  <view class='xiaoxi-li'>
-    <view class='xiaoxi-li-tit'>
-      <view class='xiaoxi-li-tit-left'>
-        <view class='xiaoxi-li-tuxiang'>
-          <image src='../../image/luntan1.jpg'></image>
+<!-- <view> -->
+  <block class="shanchuList" wx:for="{{shanchuList}}" wx:key="{{index}}" wx:for-item="item">
+    <view class='de-li'>
+      <view class='de-li-top'>
+        <navigator url="" class="de-li-laizi">
+          <image src='/image/luntan1.jpg'></image>
+          <text class='laixiTxt'>{{item.name}}</text>
+        </navigator>
+        <view class='fabuTxt'>
+          <text class="zhuangtai">赞</text>
+          <text class='fabu'>了这条发布</text>
         </view>
-        <view class='xiaoxi-user'>韩君</view>
-        <view class='xiaoxi-zan'>赞了这条发布</view>
+        <view class='zhuangtaiData'>19/12/23</view>
       </view>
-      <view class='xiaoxi-tit-date'>19/12/13</view>
+      <view class='de-li-cen'>
+        <navigator class='from'>
+          <image src='/image/luntan2.jpg' class='from-img'></image>
+          <text class='from-name'>{{item.nickname}}</text>
+        </navigator>
+        <view class='fabuTime'>
+        <text class='fabuDay'>{{item.createTime}}</text>
+        </view>
+      </view>
+      <view class='de-li-bot'>
+        <text class='fabu-tit'>双马尾成为了最佳剑灵神器</text>
+        <span class="fabu-type">时尚</span>
+      </view>
     </view>
-     <view class='xiaoxi-tiezi-li'>
-        <view class='xiaoxi-tiezi-left'>
-          <view class='xiaoxi-tiezi-img'>
-            <image src='../../image/luntan2.jpg'></image>
-          </view>
-        </view>
-        <view class='xiaoxi-tiezi-right'>
-          <view class="xiaoxi-li-tit">
-            <text class='xiaoxi-li-tit-txt'>双马尾成为了最佳减龄神器？</text>
-            <view class='xiaoxi-li-tit-rig'>时尚</view>
-          </view>
-          <view class='xiaoxi-from'>
-            <text class='xiaoxi-form-con'>来自</text>
-            <navigator url='../quanxian/quanxian'>
-              <image src='../../image/luntan5.jpg'></image>
-            </navigator>
-            <navigator class='xiaoxi-yours' url='../quanxian/quanxian'>
-              <text>你的我的</text>
-            </navigator>
-            <text class='xiaoxi-data'>2019-12-21 12:00</text>
-          </view>
-        </view>
-      </view>
-  </view>
-  <view class='xiaoxi-li'>
-    <view class='xiaoxi-li-tit'>
-      <view class='xiaoxi-li-tit-left'>
-        <view class='xiaoxi-li-tuxiang'>
-          <image src='../../image/luntan1.jpg'></image>
-        </view>
-        <view class='xiaoxi-user'>西瓜头</view>
-        <view class='xiaoxi-zan'>评论了这条发布</view>
-      </view>
-      <view class='xiaoxi-tit-date'>19/12/13</view>
-    </view>
-     <view class='xiaoxi-tiezi-li'>
-        <view class='xiaoxi-tiezi-left'>
-          <view class='xiaoxi-tiezi-img'>
-            <image src='../../image/luntan2.jpg'></image>
-          </view>
-        </view>
-        <view class='xiaoxi-tiezi-right'>
-          <view class="xiaoxi-li-tit">
-            <text class='xiaoxi-li-tit-txt'>胃真的会被越撑越大，越饿越小吗？</text>
-            <view class='xiaoxi-li-tit-rig'>健康</view>
-          </view>
-          <view class='xiaoxi-from'>
-            <text class='xiaoxi-form-con'>来自</text>
-            <navigator url='../quanxian/quanxian'>
-              <image src='../../image/luntan5.jpg'></image>
-            </navigator>
-            <navigator class='xiaoxi-yours' url='../quanxian/quanxian'>
-              <text>你的还是我的</text>
-            </navigator>
-            <text class='xiaoxi-data'>2019-12-21 12:00</text>
-          </view>
-        </view>
-      </view>
-  </view>
-</view>
+  </block>
+  <!-- </view> -->

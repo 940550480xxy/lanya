@@ -1,28 +1,7 @@
-/**index.wxss**/
-/* .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-} */
-
+/* 正文 */
 .in-sec{
   overflow: hidden;
-  /* width:100%; */
   background:#fff;
  padding:14rpx 0rpx 14rpx 20rpx;
 
@@ -70,11 +49,13 @@ display: block;
   margin-left:14rpx;
    border-radius: 10rpx;
 }
-
+.aihua-date{
+  font-size:20rpx;
+  color:#B6B6B6;
+  float:left;
+}
 
 .blue-booth{
-  /* width: 100%; */
-  /* margin-top: 22rpx; */
   padding:14rpx 0rpx 14rpx 20rpx;
   background:#fff;
 }
@@ -87,7 +68,6 @@ display: block;
   width:100%;
   background:#fff;
   margin-top:10rpx;
-  /* position: relative; */
 }
 .in-con-con{
   padding:40rpx 42rpx;
@@ -103,14 +83,14 @@ display: block;
   margin-bottom:36rpx;
 }
 .in-chosnse{
-  position: absolute;
+  position: fixed;
   height: 89rpx;
   width: 100%;
   top: 0;
   left: 0;
 }
 .in-chosnse-buttom{
-  position: absolute;
+  position: fixed;
   height: 89rpx;
   width: 100%;
   bottom: 0;
@@ -129,6 +109,17 @@ display: block;
   font-size:30rpx;
 }.in-chose:nth-child(2){
   color: #3594ff;
+}
+.in-group{
+  font-size:28rpx;
+  color:#424242;
+}
+.in-con-icon{
+  background:#F4F4F4;
+}
+.icon-wenjianjia02{
+  color:#C7C7C7;
+  font-size:34rpx;
 }
 .in-con-icon{
   width: 104rpx;
@@ -154,6 +145,7 @@ display: block;
   overflow: hidden;
 }
 .aiYou{
+  width: 690rpx;
   padding:0 26rpx; 
 }
 .aiYou-li{
@@ -188,13 +180,6 @@ height:69rpx;
   float:right;
   margin-right:26rpx;
 }
-/* .icon-ppt,.icon-pdf,.icon-word{
-  color:#3594FF;
-  float:left;
-  height:57rpx;
-  width:67rpx;
-  font-size:60rpx;
-} */
 .wjj-icon{
   color:#3594FF;
   float:left;
@@ -225,35 +210,31 @@ height:69rpx;
 }
 .aihua01-right{
   width:30%;
-  margin-top:8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.icon-weixuanze1{
-  font-size:28rpx;
-}
-.icon-xuanze{
-  font-size:28rpx;
-  position: absolute;
-
+.icon-xuanze,.in-xuanzhong{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10rpx;
 }
 .in-xuanzhong{
   width:20rpx;
   height:20rpx;
   border-radius: 50%;
   position:relative;
-  float:right;
-
+}
+.ready-place{
+  background-color: #f5f5f5
 }
 .icon-weixuanze1{
-  position: absolute;
-  left: 0;
-  top: 0;
+  font-size:28rpx;
 }
 .icon-xuanze{
-  position: absolute;
-  left: 0;
-  top: 0;
+  font-size:28rpx;
   color:#ff33be;
-  display: none;
 }
 .wjj-icon{
   color:#3594FF;
@@ -281,6 +262,13 @@ height:69rpx;
   /* display: none; */
   
 }
+/* 长按改变按钮边框颜色 */
+.active-tag .in-xuanzhong {
+ border:6rpx solid rgba(255,51,190,1);
+}
+/*  */
+
+
 .topNav text:nth-child(1){
  margin-left: 60rpx;
 }

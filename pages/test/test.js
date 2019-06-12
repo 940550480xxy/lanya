@@ -1,23 +1,11 @@
+// pages/shangchuan/shangchuan.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hidden: true,
-    flag: false,
-    x: 0,
-    y: 0,
-    data: [{ index: 1 },
-    { index: 2 },
-    { index: 3 },
-    { index: 4 },
-    { index: 5 },
-    { index: 6 },
-    { index: 7 },
-    ],
-    disabled: true,
-    elements: []
+
   },
 
   /**
@@ -25,17 +13,6 @@ Page({
    */
   onLoad: function (options) {
 
-    var query = wx.createSelectorQuery();
-    var nodesRef = query.selectAll(".item");
-    nodesRef.fields({
-      dataset: true,
-      rect: true
-
-    }, (result) => {
-      this.setData({
-        elements: result
-      })
-    }).exec()
   },
 
   /**
@@ -86,77 +63,70 @@ Page({
   onShareAppMessage: function () {
 
   },
-
-
-  //长按
-  _longtap: function (e) {
-    const detail = e.detail;
-    this.setData({
-      x: e.currentTarget.offsetLeft,
-      y: e.currentTarget.offsetTop
-    })
-    this.setData({
-      hidden: false,
-      flag: true
-    })
-
-  },
-  //触摸开始
-  touchs: function (e) {
-    this.setData({
-      beginIndex: e.currentTarget.dataset.index
-    })
-  },
-  //触摸结束
-  touchend: function (e) {
-    if (!this.data.flag) {
-      return;
+  favorclick: function (e) {
+         var likeFlag = false; //标志，避免多次发请求
+         //避免多次点击
+         if (likeFlag === true) {
+             return false;
+      
     }
-    const x = e.changedTouches[0].pageX
-    const y = e.changedTouches[0].pageY
-    const list = this.data.elements;
-    let data = this.data.data
-    for (var j = 0; j < list.length; j++) {
-      const item = list[j];
-      if (x > item.left && x < item.right && y > item.top && y < item.bottom) {
-        const endIndex = item.dataset.index;
-        const beginIndex = this.data.beginIndex;
-        //向后移动
-        if (beginIndex < endIndex) {
-          let tem = data[beginIndex];
-          for (let i = beginIndex; i < endIndex; i++) {
-            data[i] = data[i + 1]
-          }
-          data[endIndex] = tem;
-        }
-        //向前移动
-        if (beginIndex > endIndex) {
-          let tem = data[beginIndex];
-          for (let i = beginIndex; i > endIndex; i--) {
-            data[i] = data[i - 1]
-          }
-          data[endIndex] = tem;
-        }
+         var that = this;
+         if (e.currentTarget.dataset.userid == that.data.user_id) {
+            //  that.Pop_show('/image/shebei1.png', '不能给自己评论点赞');
+             return
+      
+    }
+         var comment_id = e.currentTarget.dataset.id; //点击当前项的id
+         var index = e.currentTarget.dataset.dex;
+        var islike = e.currentTarget.dataset.islike;
+         var message = this.data.talks;
+         var timestamp = Date.parse(new Date());
+         timestamp = timestamp / 1000;
+         var zanInfo = {
+             token: App.globalData.portConfig.token,
+             timestamp: timestamp,
+            comment_id: comment_id,
+             cancel: islike,
+           }
+         var zanData = zanInfo;
+         var postzanData = that.makePostData(zanData, that.data.key);
+         wx.request({
+             url: App.globalData.portConfig.HTTP_BASE_URL + '/comment/addLike', //点赞接口
+             data: postzanData,
+             method: 'POST',
+            header: {
+                 'content-type': 'application/x-www-form-urlencoded'
 
-        this.setData({
-          data: data
+      },
+             success: function (res) {
+                 for (let i in message) {
+                    if (i == index) {
+                         if (message[i].is_like == 0) {
+                             that.data.talks[index].is_like = 1
+                             message[i].like_num = parseInt(message[i].like_num) + 1
+              
+            } else {
+                             that.data.talks[index].is_like = 0
+                             message[i].like_num = parseInt(message[i].like_num) - 1
+              
+            }
+            
+          }
+          
+        }
+                that.setData({
+                     talks: message
+
         })
+                console.log("点赞成功", res);
+        
+        
+      },
+             complete: function (res) {
+                 likeFlag = false;
+        
       }
-    }
-    this.setData({
-      hidden: true,
-      flag: false
-    })
-  },
-  //滑动
-  touchm: function (e) {
-    if (this.data.flag) {
-      const x = e.touches[0].pageX
-      const y = e.touches[0].pageY
-      this.setData({
-        x: x - 75,
-        y: y - 45
-      })
-    }
-  }
+     })
+   },
+
 })

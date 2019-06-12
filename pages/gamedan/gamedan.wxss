@@ -11,7 +11,7 @@ page{
   width: 690rpx;
   height: 50hv;
   padding: 30rpx;
-  display: inline-flex;
+  display:flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -19,6 +19,8 @@ page{
 .yx-li{
   width: 25%;
   margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
 }
 .yx-li-img{
  width:98rpx;

@@ -53,6 +53,70 @@
 }
 
 /* 内容部分 */
+.luntan-from {
+  width: 37%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-con {
+  font-size: 24rpx;
+  color: #424242;
+}
+
+.luntan-from image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.xiangmu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.xiangmu-con {
+  width: 24%;
+}
+
+.xiangmu-icon1 {
+  font-size: 168rpx;
+  color: #8E8E8E;
+}
+
+.xiangmu-ai {
+  font-size: 26rpx;
+  color: #424242;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xiazai {
+  font-size: 20rpx;
+  color: #8e8e8e;
+}
+
+.yours {
+  font-size: 32rpx;
+  color: #424242;
+  font-weight: bold;
+}
+
+.data {
+  font-size: 20rpx;
+  color: #8E8E8E;
+}
+.day{
+  font-size: 20rpx;
+  color: #8E8E8E;
+  margin-left: 3rpx;
+}
+.luntan-from-data{
+  margin-top: -10rpx;
+}
 
 .luntanCon {
   width: 750rpx;
@@ -70,6 +134,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 29rpx;
 }
 
 .luntanConTit-left {
@@ -115,65 +180,7 @@
   height: 166rpx;
 }
 
-.luntan-from {
-  width: 53%;
-  margin-top: 20rpx;
-  display: flex;
-  justify-content: space-between;
-}
 
-.form-con {
-  font-size: 24rpx;
-  color: #424242;
-}
-
-.luntan-from image {
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 50%;
-}
-
-.xiangmu {
-  display: flex;
-  justify-content: space-between;
-}
-
-.xiangmu-con {
-  width: 24%;
-}
-
-.xiangmu-icon1 {
-  font-size: 168rpx;
-  color: #8E8E8E;
-}
-
-.xiangmu-ai {
-  font-size: 26rpx;
-  color: #424242;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.xiazai {
-  font-size: 20rpx;
-  color: #8e8e8e;
-}
-
-.yours {
-  font-size: 24rpx;
-  color: #3393ff;
-}
-
-.yours text {
-  border-bottom: 1px solid #3393ff;
-}
-
-.data {
-  font-size: 20rpx;
-  color: #424242;
-}
 
 .cun {
   width: 100%;
@@ -211,10 +218,9 @@
 }
 
 .icon-chakan, .icon-pinglun, .icon-shoucang {
-  font-size: 26rpx;
+  font-size: 28rpx;
   margin-right: 16rpx;
 }
-
 .wordicon {
   font-size: 168rpx;
   color: #3594ff;

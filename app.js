@@ -58,7 +58,30 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestUrl: 'http://192.168.1.168',
+    requestImgUrl: 'http://192.168.1.168',
+  },
+  /**
+  * null => ''
+  * @param {*} data 要处理的数据
+  */
+  null2str(data) {
+    for (let x in data) {
+      if (data[x] === null) { // 如果是null 把直接内容转为 ''
+        data[x] = ''
+      } else {
+        if (Array.isArray(data[x])) { // 是数组遍历数组 递归继续处理
+          data[x] = data[x].map(z => {
+            return this.null2str(z)
+          })
+        }
+        if (typeof (data[x]) === 'object') { // 是json 递归继续处理
+          data[x] = this.null2str(data[x])
+        }
+      }
+    }
+    return data
   }
 })
 

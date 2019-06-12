@@ -1,6 +1,7 @@
 <!--pages/delete-jilu/delete-jilu.wxml-->
 <!-- <text>pages/delete-jilu/delete-jilu.wxml</text> -->
 <view class='de-ul'>
+<block class="jiajingList" wx:for="{{jiajingList}}" wx:key="{{index}}" wx:for-item="item">
   <view class='de-li'>
     <view class='de-li-top'>
       <text class='de-li-tit'>双马尾成为了最佳减龄神器？</text>
@@ -39,5 +40,5 @@
       <text class='de-data'>2019-12-21 12:00</text>
     </view>
   </view>
-
+</block>
 </view>

@@ -1,16 +1,4 @@
-<!-- index.wxml -->
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
+<button open-type="getUserInfo" wx:if="{{hasUserInfo}}" id='getUserInfo' lang="zh_CN" bindgetuserinfo="getUserInfo"></button>
 <!-- 搜索栏部分 -->
 <view class='in-sec'>
   <view class='in-sec-con'>
@@ -28,16 +16,9 @@
 </view>
 <!-- 分割线 -->
 <view class='in-fenge'></view>
-<!-- 蓝牙部分 -->
-<!-- <view class='blue-booth'>
-  <view>
-    <icon class='iconfont icon-lanya' style='color:#3393FF;font-size:40rpx;margin-right:20rpx;'></icon>
-    <text style='font-size:32rpx;'>蓝牙</text>
-  </view>
-</view> -->
 <!-- 导航栏部分 -->
 <view class='in-con'>
-  <view class='in-chosnse' wx:if="{{testShowStr}}">
+  <!-- <view class='in-chosnse' wx:if="{{testShowStr}}">
     <view class='in-chose'>
       <text>取消</text>
       <text>全选</text>
@@ -48,73 +29,37 @@
       <text>取消</text>
       <text>全选</text>
     </view>
-  </view>
+  </view> -->
   <view class='in-con-con'>
-    <!-- <view class='in-con-group'> -->
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/xitongzu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;color:#424242;'>A组</text>
-    </navigator>
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/xitongzu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;color:#424242;'>B组</text>
-    </navigator>
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/xitongzu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>全部</text>
-    </navigator>
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/zu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>视频</text>
-    </navigator>
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/zu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>全部</text>
-    </navigator>
-    <navigator class='in-con-nav'>
-      <view class='in-con-icon'>
-        <image src='../../image/zu.png' class='xitongzu'></image>
-      </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>音频</text>
-    </navigator>
-    <navigator class='in-con-nav' bindtap='showtip'>
-      <view class='in-con-icon' style='background:#F4F4F4;'>
-        <icon class='iconfont icon-wenjianjia02' style='color:#C7C7C7;font-size:34rpx;'></icon>
-      </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>添加组</text>
-    </navigator>
-    <!-- <block class='item' wx:for="{{groupList}}" wx:key="item">
+    <block class="groupList" wx:for="{{groupList}}" wx:key="{{item}}">
       <navigator class='in-con-nav'>
+        <view class='in-con-icon'>
+          <image src='{{item.groupImg}}' class='xitongzu'></image>
+        </view>
+        <text class='in-group'>{{item.groupName}}</text>
+      </navigator>
+    </block>
+    <navigator class='in-con-nav' bindtap="newGroup">
       <view class='in-con-icon'>
-        <icon class='iconfont icon-xitongzu'></icon>
+        <icon class='iconfont icon-wenjianjia02'></icon>
       </view>
-      <text style='font-size:28rpx;pxcolor:#424242;'>{{item.name}}</text>
+      <text class='in-group'>添加组</text>
     </navigator>
-    </block> -->
-    <!-- </view> -->
   </view>
 </view>
 <!-- 项目栏部分 -->
 <view class='aiHua'>
-  <view class='aiYou'>
-    <!-- {"name": "adsfasdfasdfasd", "max": "2.0M","time": "2019-06-11 12:00", "type": "1", "id": "1"}, -->
-    <block class='item' wx:for="{{flieList}}" wx:key="item">
-      <view class='aiYou-li' bindtap='jump' bindlongpress='_longtap' bindtouchstart='touchs' bindtouchend='touchend' bindtouchmove='touchm'>
-        <movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
-          <!-- <view class='item-move' hidden='{{hidden}}'>
-          </view> -->
-        </movable-view>
-        <view class='aihua01-left' data-id="{{item.id}}">
+  <!-- <view  class='aiYou'> -->
+  <scroll-view  class='aiYou' scroll-y='{{pageInfo.scrollY}}' style='height: {{pageInfo.scrollHeight}}%'>
+    <block class="item" wx:for="{{flieList}}" wx:key="{{item}}">
+      <view class="aiYou-li {{pageInfo.readyPlaceIndex == index ? 'ready-place' : ''}}"
+      bindlongtap='' data-index='{{index}}'
+      bindtouchstart='dragStart' 
+      bindtouchmove='dragMove'
+      bindtouchend='dragEnd'>
+      <!-- <view class="aiYou-li"
+      bindlongtap='' data-index='{{index}}'> -->
+        <view class='aihua01-left'>
           <text class='in-count'>{{index + 1}}</text>
           <icon wx:if="{{item.type == '1'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
           <icon wx:if="{{item.type == '2'}}" class='iconfont icon-jiaoben wjj-icon'></icon>
@@ -123,126 +68,37 @@
           <view class='aihua01'>
             <text class='aihua-con'>{{item.name}}</text>
             <view style='display:flex;justify-content:start;'>
-              <text class='aihua-date' style='font-size:20rpx;color:#B6B6B6;float:left;'>
+              <text class='aihua-date'>
                 {{item.time}}
               </text>
             </view>
-            <view></view>
           </view>
         </view>
         <view class='aihua01-right'>
-          <view class='in-xuanzhong'>
-            <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
-            <icon class='iconfont icon-xuanze'></icon>
-          </view>
           <text class='aihua01-size'>{{item.max}}</text>
+          <view class='in-xuanzhong'>
+            <icon class="iconfont  {{item.str=='0'?'icon-weixuanze':'icon-xuanze'}} icon-weixuanze1" bindtap='clickTest' data-index="{{index}}"></icon>
+          </view>
+          
         </view>
       </view>
     </block>
-    <!-- <view class='aiYou-li' bindtap='jump'>
-      <view class='aihua01-left'>
-        <text class='in-count'>01</text>
-        <icon class='iconfont icon-wenjianjia2 wjj-icon'></icon>
-        <view class='aihua01'>
-          <text class='aihua-con'>爱华小程序项目</text>
-          <view style='display:flex;justify-content:start;'>
-            <text class='aihua-date' style='font-size:20rpx;color:#B6B6B6;float:left;'>
-              2019-12-22
-            </text>
-            <text class='aihua-time' style='font-size:20rpx;color:#B6B6B6;float:left;margin-left:10rpx;'>
-              12:00
-            </text>
-          </view>
-          <view></view>
-        </view>
+  <!-- </view> -->
+  </scroll-view >
+</view>
+<!-- 新建组弹框 -->
+<view class="floating {{floatingStr?'':'hide'}}">
+  <view class="con">
+    <view class="content">
+      <view class="name">新建组</view>
+      <view class="content-con">
+        <input type="text" placeholder="新建组" bindinput="newGroupName" />
       </view>
-      <view class='aihua01-right'>
-        <view class='in-xuanzhong'>
-          <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
-          <icon class='iconfont icon-xuanze'></icon>
-        </view>
-        <text class='aihua01-size'>2.0M</text>
-      </view>
-    </view> -->
-    <!-- <view class='aiYou-li'>
-      <view class='aihua01-left'>
-        <text class='in-count'>02</text>
-        <image src='../../image/word-icon.png'></image>
-        <view class='aihua01'>
-          <text class='aihua-con'>《爱YOU》app项目</text>
-          <view style='display:flex;justify-content:start;'>
-            <text class='aihua-date'>2019-12-22</text>
-            <text class='aihua-time' style='font-size:20rpx;color:#B6B6B6;float:left;margin-left:10rpx;'>
-              12:00
-            </text>
-          </view>
-          <view></view>
-        </view>
-      </view>
-      <view class='aihua01-right'>
-        <view class='in-xuanzhong' style='float:right'>
-          <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="1"></icon>
-          <icon class='iconfont icon-xuanze'></icon>
-        </view>
-        <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
-          20.2M
-        </text>
-      </view>
-    </view> -->
-    <!-- <view class='aiYou-li'>
-      <view class='aihua01-left'>
-        <text class='in-count'>03</text>
-        <image src='../../image/ppt-icon.png'></image>
-        <view class='aihua01'>
-          <text class='aihua-con'>项目计划书</text>
-          <view style='display:flex;justify-content:start;'>
-            <text class='aihua-date' style='font-size:20rpx;color:#B6B6B6;float:left;'>
-              2019-12-22
-            </text>
-            <text class='aihua-time' style='font-size:20rpx;color:#B6B6B6;float:left;margin-left:10rpx;'>
-              12:00
-            </text>
-          </view>
-          <view></view>
-        </view>
-      </view>
-      <view class='aihua01-right'>
-        <view class='in-xuanzhong' style='float:right'>
-          <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
-          <icon class='iconfont icon-xuanze'></icon>
-        </view>
-        <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
-          28.2M
-        </text>
-      </view>
-    </view> -->
-    <!-- <view class='aiYou-li'>
-      <view class='aihua01-left'>
-        <text class='in-count'>04</text>
-        <image src='../../image/pdf-icon.png'></image>
-        <view class='aihua01'>
-          <text class='aihua-con'>产品计划书</text>
-          <view style='display:flex;justify-content:start;'>
-            <text class='aihua-date' style='font-size:20rpx;color:#B6B6B6;float:left;'>
-              2019-12-22
-            </text>
-            <text class='aihua-time' style='font-size:20rpx;color:#B6B6B6;float:left;margin-left:10rpx;'>
-              12:00
-            </text>
-          </view>
-          <view></view>
-        </view>
-      </view>
-      <view class='aihua01-right'>
-        <view class='in-xuanzhong' style='float:right'>
-          <icon class='iconfont icon-weixuanze icon-weixuanze1' bindtap='clickTest' data-index="0" data-str="0"></icon>
-          <icon class='iconfont icon-xuanze'></icon>
-        </view>
-        <text class='aihua01-size' style='font-size:24rpx;float:right;margin-right:26rpx;'>
-          28.2M
-        </text>
-      </view>
-    </view> -->
+    </view>
+    <view class="button">
+      <view class="item" bindtap="newGroup">取消</view>
+      <view class="item" bindtap="submitData">创建</view>
+    </view>
   </view>
 </view>
 <!-- footer -->

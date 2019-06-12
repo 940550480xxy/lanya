@@ -45,9 +45,13 @@ border-radius:10rpx;
   color: #8E8E8E;
 }
 .pl-score{
-  font-size: 40rpx;
+  font-size: 20rpx;
   color: #424242;
-  margin-left: 11rpx;
+  margin:0 4rpx;
+}
+.pl-score-ci{
+   font-size: 20rpx;
+  color: #8E8E8E;
 }
 .icon-chengjiu1{
   font-size: 28rpx;
@@ -89,7 +93,7 @@ height:20rpx;
 .pl-start{
   font-size: 20rpx;
 }
-.pl-top-date{
+.pl-top-year,.pl-top-month,.pl-top-day,.pl-top-guodu{
   font-size: 20rpx;
   color: #8E8E8E;
 }
