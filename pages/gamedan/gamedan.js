@@ -6,22 +6,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    gameList: [
-      {
-        pic1:"/image/luntan1.jpg",
-        name:"QQ炫舞"
-      }, {
-        pic1: "/image/luntan2.jpg",
-        name: "QQ炫舞"
-      }
-    ]
+    gameList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options)
+    let id = options.id
+    if (this.data.gameList.length > 0) {
+      return ''
+    }
+    wx.request({
+      url: `${app.globalData.requestUrl}/Official/catalog`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        type_id: '2'
+      },
+      method: "POST",
+      success: res => {
+        res = app.null2str(res.data)
+        if (res.code == '1') {
+          this.setData({
+            gameList: res.data
+          })
+        } else {
+          wx.showModal({
+            title: '',
+            content: res.msg,
+            showCancel: false
+          })
+        }
+        console.log(res.data);
+      }
+    })
   },
 
   /**
@@ -71,5 +92,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goPinglun(e) {
+    wx.navigateTo({
+      url: `/pages/game-pinglun/game-pinglun?id=${e.currentTarget.dataset.id}`
+    })
   }
 })

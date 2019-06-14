@@ -105,12 +105,12 @@ page{
   top: 0;
 }
 .gz-guanzhu {
-  background: #3393FF;
-  color: #fff;
-}
-.gz-guanzhued {
   background:#EEF6FF;
   color: #3393FF;
+}
+.gz-guanzhued {
+  background: #3393FF;
+  color: #fff;
 }
 
 

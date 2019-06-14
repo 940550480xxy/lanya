@@ -13,28 +13,50 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
     wx.request({
       url: `${app.globalData.requestUrl}/User/user_essence`,
       headers: {
         'Content-Type': 'application/json'
       },
+      data: {
+        uid: '1'
+      },
       method: "POST",
       success: res => {
         res = app.null2str(res.data)
         if (res.code == '1') {
-          that.setData({
-            jiajingList: res.data,
+          this.setData({
+            jiajingList: res.data
           })
         } else {
-          wx.showModal({
-            title: '',
-            content: res.msg,
-            showCancel: false
+          // 无数据时
+          wx.showToast({
+            title: '暂时没有加精记录',
+            icon: 'none',
+            duration: 2000
           })
         }
         console.log(res.data);
       }
+    })
+},
+  // 取消禁言
+  jyQuxiaos: function (options) {
+    var that = this;
+    wx.request({
+      url: `${app.globalData.requestUrl}/User/cancel_essence`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      success: res => {
+        that.setData({
+          jyQuxiao: res.data,
+        })
+        console.log(res.data);
+        this.userForbidden()
+      }
+
     })
   },
 

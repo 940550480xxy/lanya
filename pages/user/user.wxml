@@ -16,14 +16,28 @@
           </navigator>
         </view>
         <view class='user-top-cen-bot' bindtap="newGroup">
-          1234-5678-9865
+          <text class='userIdTit'>SW-</text>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
+          <input class='userId'></input>
         </view>
       </view>
     </view>
-    <view class='user-top-right'>
+    <view class='user-top-right' id="{{item.id}}" wx:for="{{item}}" wx:key="unique" bindtap='viewDetails' data-buildId="{{item.buildId}}" data-status="{{item.status}}">
       <navigator url='../user-xiaoxi/user-xiaoxi'>
         <icon class='iconfont icon-xiaoxi user-xiaoxi'></icon>
-        <text class='userred-xiaoxi'></text>
+        <!-- <text class='userred-xiaoxi'></text> -->
+        <view wx:if="{{item.status == 1}}" class="dian_hide"></view>
+  <view wx:else ="{{item.status == 0}}" class="dian_show"></view>
       </navigator>
     </view>
   </view>
@@ -43,11 +57,11 @@
         <text class='user-nav-con'>下载</text>
       </navigator>
     </view>
-    <view class='user-nav-li'>
-      <navigator url='../user-tiezi/user-tiezi' class='user-nav-li-li'>
+    <view class='user-nav-li' bindtap="tieziTap">
+      <view class='user-nav-li-li'>
         <text class='user-count'>2000</text>
         <text class='user-nav-con'>帖子</text>
-      </navigator>
+      </view>
     </view>
   </view>
 </view>
@@ -95,9 +109,24 @@
 <view class="floating {{floatingStr?'':'hide'}}">
   <view class="con">
     <view class="content">
-      <view class="name">新建组</view>
+      <view class="name">请输入ID码</view>
       <view class="content-con">
-        <input type="text" placeholder="新建组" bindinput="newGroupName" />
+        <!-- <input type="text" placeholder="新建组" bindinput="newGroupName" /> -->
+        <text class='yonghuIDLine'>SW-</text>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <text class='yonghuIDLine'>-</text>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <text class='yonghuIDLine'>-</text>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
+        <input class='yonghuID'></input>
       </view>
     </view>
     <view class="button">

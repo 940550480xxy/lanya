@@ -1,31 +1,21 @@
-<!-- <view> -->
-  <block class="shanchuList" wx:for="{{shanchuList}}" wx:key="{{index}}" wx:for-item="item">
-    <view class='de-li'>
-      <view class='de-li-top'>
-        <navigator url="" class="de-li-laizi">
-          <image src='/image/luntan1.jpg'></image>
-          <text class='laixiTxt'>{{item.name}}</text>
-        </navigator>
-        <view class='fabuTxt'>
-          <text class="zhuangtai">赞</text>
-          <text class='fabu'>了这条发布</text>
+
+<!-- 关注的帖子 -->
+<view class='gz-con gz-tiezi'>
+    <block class="shanchuList" wx:for="{{shanchuList}}" wx:key="{{item}}">
+      <view class='gz-tiezi-li'>
+        <view class='gz-li-top'>
+          <navigator url='' class='gz-tiezi-li-img'>
+            <image src='{{item.avatarUrl}}'></image>
+          </navigator>
+          <!-- <view class='gz-tiezi-li-right'> -->
+            <navigator url='' class='gz-tiezi-li-yonghu'>{{item.nickname}}</navigator>
+            <text class='gz-li-date'>{{item.createTime}}</text>
+        <button class='de-li-btn' bindtap='jyQuxiaos'>取消</button>
         </view>
-        <view class='zhuangtaiData'>19/12/23</view>
-      </view>
-      <view class='de-li-cen'>
-        <navigator class='from'>
-          <image src='/image/luntan2.jpg' class='from-img'></image>
-          <text class='from-name'>你的我的</text>
-        </navigator>
-        <view class='fabuTime'>
-        <text class='fabuDay'>2019-12-14</text>
-        <text class='fabuHour'>12:00</text>
+        <view class='gz-li-right-bot'>
+          <text class='gz-li-bot-txt'>{{item.title}}</text>
+          <span class='gz-li-bot-span'>{{item.label}}</span>
         </view>
       </view>
-      <view class='de-li-bot'>
-        <text class='fabu-tit'>双马尾成为了最佳剑灵神器</text>
-        <span class="fabu-type">时尚</span>
-      </view>
-    </view>
-  </block>
-  <!-- </view> -->
+    </block>
+</view>

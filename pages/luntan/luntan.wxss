@@ -71,6 +71,65 @@
   border-radius: 50%;
 }
 
+.luntan-from {
+  width: 58%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-con {
+  font-size: 24rpx;
+  color: #424242;
+}
+
+.luntan-from image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.xiangmu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.xiangmu-con {
+  width: 24%;
+}
+
+.xiangmu-icon1 {
+  font-size: 168rpx;
+  color: #3594ff;
+}
+
+.xiangmu-ai {
+  font-size: 26rpx;
+  color: #424242;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xiazai {
+  font-size: 20rpx;
+  color: #8e8e8e;
+}
+
+/* .yours {
+  
+} */
+
+.yours text {
+  font-size: 24rpx;
+  color: #3393ff;
+}
+
+.data {
+  font-size: 20rpx;
+  color: #424242;
+}
 .xiangmu {
   display: flex;
   justify-content: space-between;
@@ -134,7 +193,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 29rpx;
 }
 
 .luntanConTit-left {
@@ -179,8 +237,6 @@
   width: 166rpx;
   height: 166rpx;
 }
-
-
 
 .cun {
   width: 100%;

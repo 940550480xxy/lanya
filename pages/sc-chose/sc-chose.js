@@ -5,31 +5,127 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files: [],
-    city: '',
-    shangchuanImg:[
+    title: '', //标题内容
+    content: '',//正文内容
+    images: [],
+    tempFilePaths: [],
+    lableLists: [
       {
-        pic:"/image/luntan1.jpg",
-      }, {
-        pic: "/image/luntan2.jpg",
-      }, {
-        pic: "/image/luntan3.jpg",
-      }, {
-        pic: "/image/luntan4.jpg",
-      }, {
-        pic: "/image/luntan3.jpg",
-      }, {
-        pic: "/image/luntan2.jpg",
+        id:1,
+        lable: "健康"
       },
-    ]
+      {
+        id:2,
+        lable: "游戏"
+      },
+      {
+        id:3,
+        lable: "健康"
+      }
+    ],
+    form:{
+      state:"",
+      title:"",
+      content:"",
+      img:"",
+      file:""
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getLocation()
-    
+  chooseImage: function () {
+    let that = this;
+    wx.chooseImage({
+      count: 9, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: res => {
+        wx.showToast({
+          title: '正在上传...',
+          icon: 'loading',
+          mask: true,
+          duration: 1000
+        })  
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        let tempFilePaths = res.tempFilePaths;
+
+        that.setData({
+          tempFilePaths: tempFilePaths
+        })
+        /**
+         * 上传完成后把文件上传到服务器
+         */
+        var count = 0;
+        for (var i = 0, h = tempFilePaths.length; i < h; i++) {
+          //上传文件
+          wx.uploadFile({
+            url: "http://192.168.1.168/Forum/upload_img",
+            filePath: tempFilePaths[i],
+            name: 'uploadfile_ant',
+            header: {
+              "Content-Type": "multipart/form-data"
+            },
+            method: "POST",
+            success: function (res) {
+              count++;
+              //如果是最后一张,则隐藏等待中  
+              if (count == tempFilePaths.length) {
+                wx.hideToast();
+              }
+            },
+            fail: function (res) {
+              wx.hideToast();
+              wx.showModal({
+                title: '错误提示',
+                content: '上传图片失败',
+                showCancel: false,
+                success: function (res) { }
+              })
+            }
+          });
+        }  
+        
+      }
+    })
+  },
+  /**
+   * 预览图片方法
+   */
+  listenerButtonPreviewImage: function (e) {
+    let index = e.target.dataset.index;
+    let that = this;
+    wx.previewImage({
+      current: that.data.tempFilePaths[index],
+      urls: that.data.tempFilePaths,
+      success: function (res) {
+        //console.log(res);
+      },
+      fail: function () {
+        //console.log('fail')
+      }
+    })
+  },
+
+  //选择用途后加样式
+  select_use: function (e) {
+    this.setData({
+      'form.state': e.currentTarget.dataset.id,
+    });
+    console.log(this.data.form)
+  },
+  handleTitleblur(e){
+    this.setData({
+      'form.title':e.detail.value
+    })
+    console.log(this.data.form)
+  },
+  handleContentblur(e){
+    this.setData({
+      'form.content':e.detail.value
+    })
+    console.log(this.data.form)
   },
 
   /**
@@ -79,73 +175,66 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 上传图片
-  chooseImageTap:function(){
-    wx.chooseImage({
-      success(res) {
-        const tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'user': 'test'
-          },
-          success(res) {
-            const data = res.data
-            //do something
-          }
-        })
-      }
-    })
-  },
-  // 获取当前位置
-  getLocation() {
-    wx.getLocation({
-      type: 'wgs84', //默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 
-      desc: '你的位置信息将用于小程序位置接口的效果展示',
-      success: res => {
-        var longitude = res.longitude
-        var latitude = res.latitude
-        wx.request({
-          url: `https://api.map.baidu.com/geocoder/v2/?ak=XLYlP33bKQlNITbeTPLSoCgHaqYaXxXc&location=${latitude},${longitude}&output=json`,
-          data: {},
-          header: {
-            'Content-Type': 'application/json'
-          },
-          success: res => {
-            var city = res.data.result.addressComponent.city;
-            this.setData({
-              city: city
+  // 长按删除图片
+  // deleteImage: function (e) {
+  //   var that = this;
+  //   var images = that.data.images;
+  //   var index = e.currentTarget.dataset.index;
+  //   wx.showModal({
+  //     title: '提示',
+  //     content: '确定要删除此图片吗？',
+  //     success: function (res) {
+  //       if (res.confirm) {
+  //         console.log('点击确定了');
+  //         images.splice(index, 1);
+  //       } else if (res.cancel) {
+  //         console.log('点击取消了');
+  //         return false;
+  //       }
+  //       that.setData({
+  //         images
+  //       });
+  //     }
+  //   })
+  // }
+
+  
+  submitForm(e) {
+    if(this.data.form.title==""){
+      wx.showToast({
+        title: '请输入标题',
+        icon:"none"
+      })
+    } else if (this.data.form.content == ""){
+      wx.showToast({
+        title: '请输入帖子内容',
+        icon: "none"
+      })
+    }else if(this.data.form.tite!=""&&this.data.form.content!=""){
+      wx.request({
+        url: 'http://192.168.1.168/Forum/insert_post', //仅为示例，并非真实的接口地址
+        data: {
+          lable:this.data.form.state,
+          title:this.data.form.title,
+          content:this.data.form.content
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+          if(res.data.code==1){
+            wx.navigateBack({
+              delta: 1,
             })
           }
-        })
-      }
-    })
-  },
-  // 长按删除图片
-  deleteImage: function (e) {
-    var that = this;
-    var images = that.data.images;
-    var index = e.currentTarget.dataset.index;//获取当前长按图片下标
-    wx.showModal({
-      title: '提示',
-      content: '确定要删除此图片吗？',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('点击确定了');
-          images.splice(index, 1);
-        } else if (res.cancel) {
-          console.log('点击取消了');
-          return false;
         }
-        that.setData({
-          images
-        });
-      }
-    })
+      })
+    }
+    
   }
-  
+
+
 })
 
 

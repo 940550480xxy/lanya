@@ -364,4 +364,71 @@ height:69rpx;
   color: #424242;
 }
 
-
+/* 新建组弹窗 */
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.floating{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(51, 51, 51, .8)
+}
+.floating .con{
+  width: 690rpx;
+  height: auto;
+  /* padding: 20rpx; */
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 0;
+  left: 26rpx;
+}
+.floating .button{
+  display: flex;
+  align-items: center;
+  flex-direction: center;
+  justify-content: space-between;
+  border-top: 1rpx solid #EDEDED;
+  margin-top: 61rpx;
+}
+.floating .button .item{
+  width: 324rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #424242;
+  font-size: 34rpx;
+}
+.floating .button .item:nth-child(2){
+  border-left: 1rpx solid #EDEDED;
+}
+.floating .content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.floating .content .name{
+  text-align: center;
+  font-size: 30rpx;
+  color: #343434;
+  margin: 86rpx 0 12rpx  0;
+}
+.floating .content input{
+  font-size: 25rpx;
+  color: #555;
+  border: 1px solid #E1E1E1;
+  width: 514rpx;
+  margin: 20rpx 0;
+  padding: 0 28rpx;
+  height: 60rpx;
+}

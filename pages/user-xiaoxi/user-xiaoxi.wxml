@@ -1,5 +1,5 @@
-<!-- <view> -->
-  <block class="shanchuList" wx:for="{{shanchuList}}" wx:key="{{index}}" wx:for-item="item">
+
+  <block class="newsList" wx:for="{{newsList}}" wx:key="{{index}}" wx:for-item="item">
     <view class='de-li'>
       <view class='de-li-top'>
         <navigator url="" class="de-li-laizi">
@@ -10,7 +10,7 @@
           <text class="zhuangtai">赞</text>
           <text class='fabu'>了这条发布</text>
         </view>
-        <view class='zhuangtaiData'>19/12/23</view>
+        <view class='zhuangtaiData'>{{item.createTime}}}</view>
       </view>
       <view class='de-li-cen'>
         <navigator class='from'>
@@ -22,9 +22,8 @@
         </view>
       </view>
       <view class='de-li-bot'>
-        <text class='fabu-tit'>双马尾成为了最佳剑灵神器</text>
-        <span class="fabu-type">时尚</span>
+        <text class='fabu-tit'>{{item.title}}</text>
+        <span class="fabu-type">{{item.label}}</span>
       </view>
     </view>
   </block>
-  <!-- </view> -->

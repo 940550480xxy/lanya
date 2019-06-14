@@ -1,15 +1,17 @@
-page{
+page {
   display: flex;
   flex-direction: column;
   height: 100%;
   background: #fff;
 }
-.navbar{
+
+.navbar {
   flex: none;
   display: flex;
   background: #fff;
 }
-.navbar .item{
+
+.navbar .item {
   position: relative;
   flex: auto;
   text-align: center;
@@ -17,7 +19,8 @@ page{
   font-size: 30rpx;
   color: #424242;
 }
-.navbar .item.active:after{
+
+.navbar .item.active:after {
   content: "";
   display: block;
   position: absolute;
@@ -25,12 +28,15 @@ page{
   left: 0;
   right: 0;
   height: 4rpx;
-  background:  rgba(51, 147, 255, 1);
+  background: rgba(51, 147, 255, 1);
 }
-.gz-con{
+
+.gz-con {
   padding: 0 26rpx;
 }
+
 /* 关注的人 */
+
 .gz-top-cen {
   display: flex;
   justify-content: space-between;
@@ -94,7 +100,6 @@ page{
   position: relative;
 }
 
-
 .gz-top-right view {
   width: 120rpx;
   text-align: center;
@@ -106,12 +111,11 @@ page{
   left: 0;
   top: 0;
 }
-.jy-quxiao-btn{
-  /* width:81rpx;
-height:42rpx; */
-background:#EEF6FF;
-border-radius:10rpx;
-color: #3393FF;
-font-size: 20rpx;
-border: none;
+
+.jy-quxiao-btn {
+  background: #eef6ff;
+  border-radius: 10rpx;
+  color: #3393ff;
+  font-size: 20rpx;
+  border: none;
 }

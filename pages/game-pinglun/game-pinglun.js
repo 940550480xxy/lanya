@@ -13,6 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    let id = options.id
     var that = this;
     wx.request({
       url: `${app.globalData.requestUrl}/Official/comment_list`,

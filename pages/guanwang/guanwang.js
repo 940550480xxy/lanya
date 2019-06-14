@@ -89,5 +89,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goGamedan(e) {
+    wx.navigateTo({
+      url: `/pages/gamedan/gamedan?id=${e.currentTarget.dataset.id}`
+    })
   }
 })

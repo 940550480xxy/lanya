@@ -1,44 +1,21 @@
-<!--pages/delete-jilu/delete-jilu.wxml-->
-<!-- <text>pages/delete-jilu/delete-jilu.wxml</text> -->
-<view class='de-ul'>
-<block class="jiajingList" wx:for="{{jiajingList}}" wx:key="{{index}}" wx:for-item="item">
-  <view class='de-li'>
-    <view class='de-li-top'>
-      <text class='de-li-tit'>双马尾成为了最佳减龄神器？</text>
-      <button class='de-li-btn'>取消</button>
-    </view>
-    <view class='de-li-cen'>
-      除了小朋友，为什么日常生活中很少有人扎马尾？很村？装嫩？有病？轻快抛开你对他的偏见吧!!!
-    </view>
-    <view class='de-li-bot'>
-      <text class='de-form-con'>来自</text>
-      <navigator url='../quanxian/quanxian'>
-        <image src='../../image/luntan5.jpg'></image>
-      </navigator>
-      <navigator class='de-yours'>
-        <text>你的我的</text>
-      </navigator>
-      <text class='de-data'>2019-12-21 12:00</text>
-    </view>
-  </view>
-  <view class='de-li'>
-    <view class='de-li-top'>
-      <text class='de-li-tit'>双马尾成为了最佳减龄神器？</text>
-      <button class='de-li-btn'>取消</button>
-    </view>
-    <view class='de-li-cen'>
-      除了小朋友，为什么日常生活中很少有人扎马尾？很村？装嫩？有病？轻快抛开你对他的偏见吧!!!
-    </view>
-    <view class='de-li-bot'>
-      <text class='de-form-con'>来自</text>
-      <navigator url='../quanxian/quanxian'>
-        <image src='../../image/luntan5.jpg'></image>
-      </navigator>
-      <navigator class='de-yours'>
-        <text>你的我的</text>
-      </navigator>
-      <text class='de-data'>2019-12-21 12:00</text>
-    </view>
-  </view>
-</block>
+
+<!-- 关注的帖子 -->
+<view class='gz-con gz-tiezi'>
+    <block class="jiajingList" wx:for="{{jiajingList}}" wx:key="{{item}}">
+      <view class='gz-tiezi-li'>
+        <view class='gz-li-top'>
+          <navigator url='' class='gz-tiezi-li-img'>
+            <image src='{{item.avatarUrl}}'></image>
+          </navigator>
+          <!-- <view class='gz-tiezi-li-right'> -->
+            <navigator url='' class='gz-tiezi-li-yonghu'>{{item.nickname}}</navigator>
+            <text class='gz-li-date'>{{item.createTime}}</text>
+        <button class='de-li-btn' bindtap='jyQuxiaos'>取消</button>
+        </view>
+        <view class='gz-li-right-bot'>
+          <text class='gz-li-bot-txt'>{{item.title}}</text>
+          <span class='gz-li-bot-span'>{{item.label}}</span>
+        </view>
+      </view>
+    </block>
 </view>

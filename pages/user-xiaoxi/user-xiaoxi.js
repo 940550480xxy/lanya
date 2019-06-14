@@ -34,10 +34,10 @@ Page({
             shanchuList: res.data
           })
         } else {
-          wx.showModal({
-            title: '',
-            content: res.msg,
-            showCancel: false
+          wx.showToast({
+            title: '暂时没有消息',
+            icon: 'none',
+            duration: 2000
           })
         }
         console.log(res.data);

@@ -1,80 +1,56 @@
-page {
+/* pages/delete-jilu/delete-jilu.wxss */
+page{
   background: #fff;
 }
-
-.de-li {
-  padding: 40rpx 26rpx;
-  border-bottom: 1rpx solid #EDEDED;
+/* 关注的帖子 */
+.gz-tiezi-li{
+  padding: 49rpx 0;
+  border-bottom:1rpx solid #EDEDED; 
 }
-
-.de-li-top {
+.gz-li-top{
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-
-.de-li-laizi image {
+.gz-tiezi-li-img image{
   width: 40rpx;
   height: 40rpx;
-  border-radius: 20rpx;
+  border-radius: 50%;
 }
-.laixiTxt{
-  font-size: 32rpx;
-  color: #3393FF;
-  font-weight: bold;
-  margin-left: 12rpx;
-}
-.fabuTxt{
-}
-.zhuangtai,.fabu{
-  font-size: 32rpx;
-  color: #424242;
-  font-weight: bold;
-}
-.zhuangtaiData{
-  font-size: 20rpx;
-  color: #8E8E8E;
-  margin-left: 303rpx;
-}
-.de-li-cen{
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 31rpx;
-}
-.from image{
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 20rpx;
-}
-.from-name{
+.gz-tiezi-li-yonghu{
   font-size: 24rpx;
   color: #3393FF;
   margin: 0 12rpx;
-  border-bottom: 1rpx solid #3393FF;
 }
-.fabuDay,.fabuHour{
+.gz-li-date{
   font-size: 20rpx;
   color: #8E8E8E;
 }
-.fabuHour{
-  margin-left: 8rpx;
-}
-.de-li-bot{
-  margin-top: 21rpx;
-  margin-left: 32rpx;
-}
-.fabu-tit{
-  font-size: 35rpx;
+.gz-li-bot-txt{
+  font-size: 32rpx;
+  font-weight:bold;
   color: #424242;
-  font-weight: bold;
+  margin-left: 46rpx;
 }
-.fabu-type{
+.gz-li-bot-span{
   width:auto;
+  padding:0 14rpx;
+  line-height: 38rpx;
 height:38rpx;
-background:rgba(51,147,255,1);
-border-radius:10rpx;
-font-size: 20rpx;
+background:#3393FF;
 color: #FFFEFE;
-padding: 0 13rpx;
-margin-left: 20rpx;
+border-radius:10rpx;
+font-size:20rpx; 
+margin-left:18rpx;
+}
+.de-li-btn{
+  width: auto;
+  line-height: 42rpx;
+  height: 42rpx;
+  padding: 0 24rpx;
+  font-size: 20rpx;
+  color: #3393FF;
+  font-weight: bold;
+  background:rgba(255,255,255,1);
+  margin-left: 275rpx;
 }

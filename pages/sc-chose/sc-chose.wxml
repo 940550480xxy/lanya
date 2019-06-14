@@ -1,58 +1,32 @@
-<view class="xz-top">
-  <view class='xz-top-cen'>
-    <!-- 底部 -->
-    <view class="tiezi-bot">
-      <view class="tiezi-bot-con">
-        <view class='tit-bot-bot'>
-          <view class='tit-bot-left'>
-            <view class='tit-bot-left-input'>
-              <textarea placeholder='请输入发表内容...' class='tit-bot-input' maxlength="3000" auto-height='true' auto-width='true'></textarea>
-            </view>
-            <view class='tit-bot-right-icon' bindtap='chooseImageTap'>
-              <icon class='iconfont icon-tianjia1 xz-tianjia'></icon>
-            </view>
-          </view>
-          <view>
-            <button class='tit-bot-btn'>发送</button>
-          </view>
+<view class="shangchuan">
+  <view class="shangchuanCon">
+    <view class="shangchuanLeft">
+      <view class="choseLable">请选择标签</view>
+      <view class="lables">
+        <view class="lableli {{form.state==item.id?'active-tag':''}}" bindtap="select_use" wx:for="{{lableLists}}" wx:key='{{index}}' data-id="{{item.id}}">
+          <view class="lableList">{{item.lable}}</view>
         </view>
+      </view>
+      <view class="titInput">
+        <input class="question-title" placeholder="请输入标题" maxlength="40" placeholder-style="color:#b3b3b3;font-size:18px;" bindblur="handleTitleblur"></input>
+      </view>
+      <view class="weui-cell__bd">
+        <!-- 多行输入框 -->
+        <textarea class="weui-textarea" placeholder="请输入发表内容..." maxlength="500" placeholder-style="color:#b3b3b3;font-size:14px;" style="height: 12rem" bindblur="handleContentblur" />
+        <view class="uploads">
+          <view class="upload" bindtap="chooseImage">上传图片</view>
+          <view class="upload" bindtap="chooseImage">上传文件</view>
+        </view>
+      </view>
+      <!-- 图片 -->
+      <view class="question-images">
+        <block wx:for="{{tempFilePaths}}" wx:key="{{index}}">
+          <!-- 图片缩略图 -->
+          <image class="q-image" src="{{item }}" data-index="{{index}}" bindtap="listenerButtonPreviewImage"></image>
+        </block>
       </view>
     </view>
-    <!-- <view class='xz-top-imgs'>
-,
-xscdsvfd      </block>
-    </view> -->
-    <!-- <view class='xz-top-img xz-top-img2'>
-        <image src='../../image/luntan2.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img3'>
-        <image src='../../image/luntan3.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img4'>
-        <image src='../../image/luntan4.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img5'>
-        <image src='../../image/luntan4.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img6'>
-        <image src='../../image/luntan2.jpg' class='xz-top-img1-img1'></image>
-      </view>
-      <view class='xz-top-img xz-top-img7'>
-        <image src='../../image/luntan3.jpg' class='xz-top-img1-img1'></image>
-      </view> -->
-
-
-    <!-- 底部 -->
-    <!-- <view class='xz-bot-bot'>
-      <view class='xz-top-bot'>
-        <view class='xz-top-bot-bot xz-top-bot-left'>
-          <icon class='iconfont icon-dingwei xz-top-bot-left-icon'></icon>
-          <text id='xz-top-bot-dizhi'>{{city}}</text>
-        </view>
-        <view class='xz-top-bot-bot xz-top-bot-right'>
-          <button class='xz-bot-btn'>发布</button>
-        </view>
-      </view>
-    </view> -->
+    <!-- 右边发送按钮 -->
+    <button class="shangchuanRight" data-id="{{item.id}}" bindtap="submitForm">发送</button>
   </view>
 </view>

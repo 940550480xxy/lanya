@@ -1,156 +1,102 @@
 page{
-   background:#fff;
-}
-.xz-top{
-  width: 100%;
- 
-}
-.xz-top-cen{
-  padding: 0 26rpx 30rpx 26rpx;
-}
-/* 底部 */
-
-.tiezi-bot {
-  padding: 10rpx 0;
-
-}
-
-
-.tit-bot-bot {
-  /* padding: 0 0 19rpx 0; */
-  display: flex;
-  justify-content: space-between;
-}
-
-.tit-bot-left {
-  background: rgba(241, 241, 241, 1);
-  border-radius: 4rpx;
-  width: 532rpx;
-  padding: 5rpx 19rpx;
-  display: flex;
-  justify-content: space-between;
-}
-.tit-bot-input {
-  font-size: 28rpx;
-  font-weight: 500;
-  color: rgba(142, 142, 142, 1);
-  min-height: 50rpx;
-  max-width: 470rpx;
-}
-.xz-tianjia{
-  font-size: 30rpx;
-  color: #424242;
-}
-
-.tit-bot-btn {
-  background: rgba(72, 155, 254, 1);
-  border-radius: 4rpx;
-  font-size: 28rpx;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 1);
-  display: block;
-  padding: 0 28rpx;
-  line-height: 60rpx;
-  margin: 0 0 0 18rpx;
-}
-
-/*  */
-.xz-top-nr{
-  font-size: 28rpx;
-  color: #B6B6B6;
-  line-height: 96rpx;
-  padding: 16rpx 0;
-}
-.xz-top-imgs{
-  display: flex;
-  justify-content:flex-start;
-  flex-wrap: wrap;
-}
-.xz-top-img{
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 10rpx;
-  background: #EDEDED;
-  margin-bottom: 26rpx;
-  text-align: center;
-  line-height: 137rpx;
-  position: relative;
-  margin-left: 11rpx;
-}
-.xz-top-img1-img1{
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 10rpx;
-}
-.xz-top-add{
-  font-size: 140rpx;
-  color: #fff;
-}
-.xz-top-bot{
-  /* margin-top: 535rpx; */
-
-  display: flex;
-  justify-content: space-between;
-}
-.xz-top-bot-bot{
-  padding-left:30rpx;
-  height: 72rpx;
-  width: auto;
-}
-.xz-top-bot-left{
-  display: flex;
-  justify-content: center;
-  padding-right:30rpx;
-  align-items: center;
-  line-height: 72rpx;
-  background: #EDEDED;
-  border-radius: 36rpx;
-}
-.xz-top-bot-left-icon{
-  font-size: 32rpx;
-  color: #3594FF;
-}
-#xz-top-bot-dizhi{
-  font-size: 28rpx;
-  color: #3594FF;
-  margin-left:13rpx;
-  height: 72rpx;
-}
-.xz-bot-btn{
-  border: none;
-  width: 155rpx;
-  background: #3594FF;
-  border-radius: 36rpx;
-  color: #fff;
-  font-size: 30rpx;
-  height: 72rpx;
-}
-/* 分隔线 */
-.xz-fenge{
-  height: 12rpx;
-  width: 100%;
-  background: #f6f6f6;
-  z-index: 3;
-}
-/* 底部 */
-/* .xz-bot-bot{
-  position: fixed;
-  bottom: 0;
-  left: 26rpx;
-  
-}
-.xz-bot{
-  width: 100%;
- height: 88rpx;
-line-height: 88rpx;
-  display: flex;
-  justify-content: space-around;
   background: #fff;
 }
-.xz-bot-icon{
-  width: 33.3%;
+.shangchuan{
+  width: 100%;
 }
-.xz-bot-icon-cen{
-  font-size: 48rpx;
+.shangchuanCon{
+  padding: 19rpx 26rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.shangchuanLeft{
+  width: 570rpx;
+}
+.choseLable{
+  font-size: 32rpx;
   color: #424242;
-} */
+  font-weight: bold;
+}
+.lables{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  margin-bottom: 29rpx;
+}
+.lableli{
+width:21%;
+text-align: center;
+}
+.lableList{
+height:auto;
+padding: 15rpx 0;
+background:#CFCFCF;
+border-radius:10rpx;
+font-size: 28rpx;
+color: #FFFFFF;
+margin-top: 30rpx;
+}
+.question-title{
+  padding: 0 20rpx;
+height:76rpx;
+background:#F1F1F1;
+border-radius:4rpx;
+margin-bottom: 10rpx;
+}
+.weui-cell__bd{
+  height:auto;
+  padding: 27rpx 19rpx;
+  background: #F1F1F1;
+  margin-bottom: 29rpx;
+  position: relative;
+}
+.weui-textarea-counter{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.weui-textarea{
+  width: 472rpx;
+}
+.addImg{
+  font-size: 30rpx;
+  color: #424242;
+}
+.question-images{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  height: 100rpx;
+}
+.q-image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.shangchuanRight{
+  text-align: center;
+height:60rpx;
+line-height: 60rpx;
+background:#489BFE;
+border-radius:4rpx;
+font-size: 28rpx;
+color: #FFFFFF;
+font-weight: bold;
+margin: 0;
+}
+.active-tag .lableList {
+  background: #489BFE;
+  color: #fff;
+}
+.uploads{
+  display: flex;
+  justify-content: space-between;
+}
+.upload{
+  width: auto;
+  padding: 15rpx 25rpx;
+  color: #fff;
+  background: #3393FF;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}

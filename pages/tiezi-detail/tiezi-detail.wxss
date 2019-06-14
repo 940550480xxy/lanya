@@ -5,70 +5,26 @@ page {
 }
 
 /* 内容部分 */
-
-.luntanCon {
-  width: 750rpx;
-  background: #fff;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-}
-
-.luntanCon-con {
-  padding: 44rpx 26rpx;
-}
-
-.luntanCon-tit {
-  width: 72%;
+.luntan-from {
+  width: 37%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.luntanConTit-left {
-  font-size: 32rpx;
+.form-con {
+  font-size: 24rpx;
   color: #424242;
-  font-weight: 700;
 }
 
-.luntanConTit-right {
-  width: 66rpx;
-  height: 38rpx;
-  background: #3393ff;
-  border-radius: 10rpx;
-  text-align: center;
-  display: block;
-  font-size: 20rpx;
-  color: #fffefe;
-  line-height: 38rpx;
-}
-
-.luntanCon-txt {
-  font-size: 28rpx;
-  color: #424242;
-  margin-top: 8rpx;
-  line-height: 38rpx;
-}
-
-.luntan-img {
-  margin-top: 33rpx;
-  display: flex;
-  justify-content: space-between;
-}
-
-.luntan-imgCon {
-  width: 166rpx;
-  height: 166rpx;
-  display: flex;
-  flex-direction: column;
-}
-
-.luntan-imgCon image {
-  width: 166rpx;
-  height: 166rpx;
+.luntan-from image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
 }
 
 .luntan-from {
-  width: 55%;
+  width: 58%;
   margin-top: 20rpx;
   display: flex;
   justify-content: space-between;
@@ -113,18 +69,121 @@ page {
   color: #8e8e8e;
 }
 
-.yours {
+.yours text {
   font-size: 24rpx;
   color: #3393ff;
-}
-
-.yours text {
-  border-bottom: 1px solid #3393ff;
 }
 
 .data {
   font-size: 20rpx;
   color: #424242;
+}
+.xiangmu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.xiangmu-con {
+  width: 24%;
+}
+
+.xiangmu-icon1 {
+  font-size: 168rpx;
+  color: #8E8E8E;
+}
+
+.xiangmu-ai {
+  font-size: 26rpx;
+  color: #424242;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xiazai {
+  font-size: 20rpx;
+  color: #8e8e8e;
+}
+
+.yours {
+  font-size: 32rpx;
+  color: #424242;
+  font-weight: bold;
+}
+
+.data {
+  font-size: 20rpx;
+  color: #8E8E8E;
+}
+.day{
+  font-size: 20rpx;
+  color: #8E8E8E;
+  margin-left: 3rpx;
+}
+.luntan-from-data{
+  margin-top: -10rpx;
+}
+
+.luntanCon {
+  width: 750rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.luntanCon-con {
+  padding: 44rpx 26rpx;
+}
+
+.luntanCon-tit {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.luntanConTit-left {
+  font-size: 32rpx;
+  color: #424242;
+  font-weight: 700;
+}
+
+.luntanConTit-right {
+  width: 66rpx;
+  height: 38rpx;
+  background: #3393ff;
+  border-radius: 10rpx;
+  text-align: center;
+  display: block;
+  font-size: 20rpx;
+  color: #fffefe;
+  line-height: 38rpx;
+}
+
+.luntanCon-txt {
+  font-size: 28rpx;
+  color: #424242;
+  margin-top: -25rpx;
+  line-height: 38rpx;
+}
+
+.luntan-img {
+  margin-top: 33rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.luntan-imgCon {
+  width: 166rpx;
+  height: 166rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.luntan-imgCon image {
+  width: 166rpx;
+  height: 166rpx;
 }
 
 .cun {
@@ -156,17 +215,16 @@ page {
 .luntanConBot-left, .luntanConBot-con, .luntanConBot-right {
   width: 33.3%;
   text-align: center;
-  font-size: 22rpx;
+  font-size: 26rpx;
   color: #8e8e8e;
   display: flex;
   justify-content: center;
 }
 
 .icon-chakan, .icon-pinglun, .icon-shoucang {
-  font-size: 22rpx;
+  font-size: 28rpx;
   margin-right: 16rpx;
 }
-
 .wordicon {
   font-size: 168rpx;
   color: #3594ff;
@@ -180,6 +238,7 @@ page {
 .luntan-xiazai-right {
   font-size: 30rpx;
   color: #424242;
+  /* font-weight: 600; *//* margin-top: 139rpx; *//* margin-left: 28rpx; */
 }
 
 .liuyan {
@@ -224,7 +283,6 @@ page {
   font-size: 20rpx;
   color: #8e8e8e;
 }
-
 /* 底部 */
 
 .tiezi-bot {

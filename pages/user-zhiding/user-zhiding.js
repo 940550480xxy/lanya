@@ -1,48 +1,67 @@
-// pages/user-zhiding/user-zhiding.js
-const app = getApp();
+// pages/user-jiajing/user-jiajing.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    zhidingList:[]
+    zhidingList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
     wx.request({
-      url: `http://192.168.1.168/User/user_top`,
+      url: `${app.globalData.requestUrl}/User/user_top`,
       headers: {
         'Content-Type': 'application/json'
       },
+      data: {
+        uid: '1'
+      },
       method: "POST",
       success: res => {
-        // res = app.null2str(res.data)
+        res = app.null2str(res.data)
         if (res.code == '1') {
-          let zhidingList = res.data
-            let i = 0
-          for (i in zhidingList) {
-            zhidingList[i]["str"] = "0"
-          }
-        that.setData({
-          zhidingList: res.data,
-        })
-        }else{
-          wx.showModal({
-            title: '暂无置顶记录',
-            // content: res.msg,
-            showCancel: false
+          this.setData({
+            zhidingList: res.data
+          })
+        } else {
+          // 无数据时
+          wx.showToast({
+            title: '暂时没有置顶记录',
+            icon: 'none',
+            duration: 2000
           })
         }
         console.log(res.data);
       }
     })
   },
+  // 取消禁言
+  jyQuxiaos: function (options) {
+    var that = this;
+    wx.request({
+      url: `${app.globalData.requestUrl}/User/cancel_top`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data:{
+        post_id:"1"
+      },
+      method: "POST",
+      success: res => {
+        that.setData({
+          jyQuxiao: res.data,
+        })
+        console.log(res.data);
+        this.userForbidden()
+      }
 
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

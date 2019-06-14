@@ -1,10 +1,10 @@
 <view class="yx-cen">
   <view class='yx-cen-con'>
     <block class="gameList" wx:for="{{gameList}}" wx:key="item">
-      <view class='yx-li' data-id="{{item.id}}">
+      <view class='yx-li' data-id="{{item.id}}" bindtap='goPinglun'>
         <navigator url='../game-pinglun/game-pinglun'>
           <view class='yx-li-img'>
-            <image src='{{item.pic1}}'></image>
+            <image src='{{item.file}}'></image>
             <view class='yx-li-img-border yx-li-img-border1'></view>
           </view>
           <view class='yx-li-txt'>{{item.name}}</view>

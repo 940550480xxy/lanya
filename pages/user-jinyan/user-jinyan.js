@@ -1,72 +1,65 @@
 // pages/user-jinyan/user-jinyan.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    guanzhurenList: [],
-    jyQuxiao:[]
+    jinyanList: []
 
   },
-  // 关注
-  focusTap(e) {
-    var index = e.currentTarget.dataset.index
-    console.log(index)
-    var guanzhurenList = this.data.guanzhurenList
-    if (guanzhurenList[index].str == '0') {
-      guanzhurenList[index].str = '1'
-    } else {
-      guanzhurenList[index].str = '0'
-    }
-    console.log(guanzhurenList)
-    this.setData({
-      guanzhurenList: guanzhurenList
-    })
-  },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    this.userForbidden()
-  },
-  userForbidden() {
-    var that = this;
+  onLoad: function (options) {
     wx.request({
       url: `http://192.168.1.168/User/user_forbidden`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        uid: '1'
+      },
+      method: "POST",
+      success: res => {
+        // res = app.null2str(res.data)
+        if (res.code == '1') {
+          this.setData({
+            jinyanList: res.data
+          })
+        } else {
+          // 无数据时
+          wx.showToast({
+            title: '暂时没有禁言记录',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        console.log(res.data);
+      }
+    })
+  },
+  // 取消禁言
+  jyQuxiaos: function (options) {
+    var that = this;
+    wx.request({
+      url: `http://192.168.1.168/User/cancel_forbidden`,
       headers: {
         'Content-Type': 'application/json'
       },
       method: "POST",
       success: res => {
         that.setData({
-          guanzhurenList: res.data.data,
+          jyQuxiao: res.data,
         })
-        console.log(res.data.data);
-      }
-    })
-  },
-  // 取消禁言
-  jyQuxiaos: function (options){
-    var that = this;
-    wx.request({
-      url:`http://192.168.1.168/User/cancel_forbidden`,
-      headers:{
-        'Content-Type':'application/json'
-      },
-      method:"POST",
-      success : res => {
-        that.setData({
-          jyQuxiao:res.data,
-        })
-        console.log(res.data); 
+        console.log(res.data);
         this.userForbidden()
-      } 
-        
+      }
+
     })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

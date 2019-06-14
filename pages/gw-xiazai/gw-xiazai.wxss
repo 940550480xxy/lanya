@@ -54,6 +54,10 @@ margin: 0 auto;
 height:80rpx;
 background:rgba(53,148,255,1);
 border-radius:10rpx;
+text-align: center;
+line-height: 80rpx;
+}
+.yx-log-text{
 color: #fff;
 font-size: 32rpx;
 }

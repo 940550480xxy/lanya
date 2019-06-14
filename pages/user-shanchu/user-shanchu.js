@@ -1,4 +1,4 @@
-// pages/user-xiazai/user-xiazai.js
+// pages/user-jiajing/user-jiajing.js
 const app = getApp()
 Page({
 
@@ -6,18 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // getFlieList() {
     shanchuList: []
   },
-  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (this.data.shanchuList.length > 0) {
-      return ''
-    }
     wx.request({
       url: `${app.globalData.requestUrl}/User/del_post`,
       headers: {
@@ -34,14 +29,41 @@ Page({
             shanchuList: res.data
           })
         } else {
-          wx.showModal({
-            title: '',
-            content: res.msg,
-            showCancel: false
+          // 无数据时
+          wx.showToast({
+            title: '暂时没有删除记录',
+            icon: 'none',
+            duration: 2000
           })
         }
+        
+
         console.log(res.data);
       }
+    })
+  },
+
+  
+  // 取消禁言
+  jyQuxiaos: function (options) {
+    var that = this;
+    wx.request({
+      url: `${app.globalData.requestUrl}/User/cancel_del`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data:{
+        post_id:"1"
+      },
+      method: "POST",
+      success: res => {
+        that.setData({
+          jyQuxiao: res.data,
+        })
+        console.log(res.data);
+        this.userForbidden()
+      }
+
     })
   },
 

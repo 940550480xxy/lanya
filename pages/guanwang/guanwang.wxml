@@ -1,8 +1,8 @@
 <view class="gw-cen">
   <view class='gw-cen-con'>
-      <block class="gwList" wx:for="{{gwList}}" wx:key="{{item}}">
-    <navigator url='../gamedan/gamedan' class='gw-li-nav'>
-        <view class='gw-li gw-li1' data-id="{{item.id}}">
+    <block class="gwList" wx:for="{{gwList}}" wx:key="{{item}}">
+      <view data-id="{{item.id}}" class='gw-li-nav' bindtap='goGamedan'>
+        <view class='gw-li gw-li1'>
           <view class='gw-li-left'>
             <image src='{{requestImgUrl + item.img}}'></image>
           </view>
@@ -17,7 +17,7 @@
             </view>
           </view>
         </view>
-    </navigator>
-      </block>
+      </view>
+    </block>
   </view>
 </view>
